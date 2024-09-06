@@ -46,7 +46,7 @@ const ChatPage = () => {
           checked={guardrailsEnabled}
           onCheckedChange={setGuardrailsEnabled}
         />
-        <Label htmlFor="guardrails-mode">Fenz AI Guardrails</Label>
+        <Label htmlFor="guardrails-mode">Fenz AI Agent Guard</Label>
       </div>
       {/* Messages area */}
       <div className="flex-grow overflow-y-auto px-4">
