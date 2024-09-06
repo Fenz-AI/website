@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           <p className="text-sm text-gray-500">
-            &copy; {new Date().getFullYear()} GPTDAO Guardrails. All rights reserved.
+            &copy; {new Date().getFullYear()} Fenz AI. All rights reserved.
           </p>
           <nav className="flex space-x-4">
             <Link href="#" className="text-sm text-gray-500 hover:text-gray-900">

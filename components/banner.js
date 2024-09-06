@@ -19,7 +19,7 @@ const Banner = () => {
         quality={100}
       />
       <div className="absolute inset-0 bg-black bg-opacity-60 flex flex-col items-center justify-center text-white">
-        <h1 className="text-5xl md:text-7xl font-bold mb-6 text-center">Welcome to GPTDAO Guardrails</h1>
+        <h1 className="text-5xl md:text-7xl font-bold mb-6 text-center">Welcome to Fenz AI</h1>
         <p className="text-xl md:text-2xl mb-10 text-center max-w-2xl">Ensuring AI safety and integrity through rigorous evaluation</p>
         <Button 
           size="lg" 

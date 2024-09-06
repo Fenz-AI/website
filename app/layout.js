@@ -14,7 +14,7 @@ const geistMono = localFont({
 });
 
 export const metadata = {
-  title: "GPTDAO Guardrails",
+  title: "Fenz AI | AI Safety Guardrails",
   description: "Evaluate your AI products and LLMs for safety and societal impact.",
 };
 
