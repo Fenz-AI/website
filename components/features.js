@@ -3,7 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const features = [
   {
-    title: "AI Product Inspection & Audit",
+    title: "AI Product Inspection & Audit by AI Agents",
     description: "Comprehensive evaluation of your AI agents and LLMs for safety and societal impact. Our detailed reports cover a wide range of topics to ensure your products meet the highest standards.",
     icon: "/images/inspect.svg"
   },

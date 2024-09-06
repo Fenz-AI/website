@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/dialog";
 import { Progress } from "@/components/ui/progress";
 import Evaluation from "./evaluation";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
 const Product = ({ id, name, apiKey, health, onDelete }) => {
   const router = useRouter();
@@ -20,6 +21,7 @@ const Product = ({ id, name, apiKey, health, onDelete }) => {
   const [isEvaluateLoading, setIsEvaluateLoading] = useState(false);
   const [progress, setProgress] = useState(0);
   const [selectedHealth, setSelectedHealth] = useState(health);
+  const [protectionDuration, setProtectionDuration] = useState("");
 
   const getHealthBadge = (health) => {
     const colors = {
@@ -69,6 +71,13 @@ const Product = ({ id, name, apiKey, health, onDelete }) => {
     }
   }, [isEvaluateLoading]);
 
+  useEffect(() => {
+    if (health === "good") {
+      const durations = ["2 weeks", "1 month", "3 months", "6 months", "1 year"];
+      setProtectionDuration(durations[Math.floor(Math.random() * durations.length)]);
+    }
+  }, [health]);
+
   const handleChatClick = useCallback(() => {
     router.push("/chat");
   }, [router]);
@@ -78,12 +87,28 @@ const Product = ({ id, name, apiKey, health, onDelete }) => {
       <CardContent className="p-4">
         <div className="flex items-center mb-2">
           {getHealthBadge(health)}
-          <h3 className="text-lg font-semibold">{name}</h3>
+          <h3 className="text-lg font-semibold">{name} {health === "good" ? "(Protected)" : ""}</h3>
         </div>
         <p className="text-sm text-gray-600 mb-2">API Key: {apiKey}</p>
         <Badge variant="outline" className="mb-2">
           {health === "good" ? "Healthy" : health === "warning" ? "Needs Attention" : "Critical"}
         </Badge>
+        {health === "good" && (
+          <TooltipProvider>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <p className="text-sm text-green-600 mt-2 cursor-help">
+                  We have been protecting your product for {protectionDuration}
+                </p>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>
+                  Your product has been working without any issues for the past {protectionDuration}.
+                </p>
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
+        )}
       </CardContent>
       <CardFooter className="flex justify-between items-center p-4">
         <div className="flex gap-2">

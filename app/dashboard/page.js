@@ -3,6 +3,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import ProductList from "@/components/productList";
+import Agents from "@/components/agents";
 
 
 const Dashboard = () => {
@@ -51,12 +52,21 @@ const Dashboard = () => {
         <Link href="/">
           <Button variant="outline">Back to Home</Button>
         </Link>
-        <Button onClick={handleAddProduct}>Add New Product</Button>
+      </div>
+
+      <div className="flex flex-col space-y-4">
+        <div className="bg-white shadow-md rounded-lg p-6">
+          <h2 className="text-xl font-semibold mb-4">Agents Working for You</h2>
+        <Agents />
       </div>
       
       <div className="bg-white shadow-md rounded-lg p-6">
-        <h2 className="text-xl font-semibold mb-4">Your AI Products</h2>
-        <ProductList products={products} onDeleteProduct={handleDeleteProduct} />
+        <div className="flex justify-between items-center mb-4">
+          <h2 className="text-xl font-semibold mb-4">Your AI Products</h2>
+          <Button onClick={handleAddProduct}>Add New Product</Button>
+        </div>
+          <ProductList products={products} onDeleteProduct={handleDeleteProduct} />
+        </div>
       </div>
     </div>
   );
