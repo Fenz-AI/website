@@ -19,7 +19,7 @@ const Banner = () => {
         quality={100}
       />
       <div className="absolute top-4 left-4 z-10">
-        <div className="bg-white p-2 rounded-lg shadow-md">
+        <div className="bg-white p-2 rounded-lg shadow-md animate-pulse">
           <Image
             src="/images/logo.png"
             alt="Logo"
