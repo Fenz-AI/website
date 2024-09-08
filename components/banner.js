@@ -18,16 +18,14 @@ const Banner = () => {
         objectFit="cover"
         quality={100}
       />
-      <div className="absolute top-4 left-4 z-10">
-        <div className="bg-white p-2 rounded-lg shadow-md animate-pulse">
+      <div className="absolute top-4 left-4 z-10 animate-pulse">
           <Image
-            src="/images/logo.png"
+            src="/images/logo2.png"
             alt="Logo"
             width={100}
             height={40}
             objectFit="contain"
           />
-        </div>
       </div>
       <div className="absolute inset-0 bg-black bg-opacity-[65%] flex flex-col items-center justify-center text-white">
         <h1 className="text-5xl md:text-7xl font-bold mb-6 text-center">Fenz AI Agent Guard</h1>
