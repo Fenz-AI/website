@@ -27,11 +27,11 @@ const features = [
 const Features = () => {
   return (
     <section className="py-16 bg-gray-50">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 max-w-6xl">
         <h2 className="text-3xl font-bold text-center mb-12">Our Features</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="flex flex-wrap gap-8 justify-center">
           {features.map((feature, index) => (
-            <Card key={index} className="hover:shadow-lg transition-shadow duration-300">
+            <Card key={index} className="hover:shadow-lg transition-shadow duration-300 w-full md:w-[45%]">
               <CardHeader className="flex flex-row items-center space-x-4">
                 <Image src={feature.icon} alt={feature.title} width={40} height={40} />
                 <CardTitle>{feature.title}</CardTitle>
