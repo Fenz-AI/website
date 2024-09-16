@@ -35,14 +35,14 @@ const ChatDemo = () => {
   return (
     <div className="flex flex-col gap-y-8">
       <div className="flex flex-row justify-between">
-        <h1 className="text-2xl font-bold w-1/4">Fenz AI Agent</h1>
+        <h1 className="text-2xl font-bold w-1/4">Fenz AI Guardrail</h1>
         <div className="container mx-auto px-4 py-2 flex items-center justify-end space-x-2">
           <Switch
             id="guardrails-mode"
             checked={guardrailsEnabled}
             onCheckedChange={setGuardrailsEnabled}
           />
-          <Label htmlFor="guardrails-mode">Fenz AI Agent Guard</Label>
+          <Label htmlFor="guardrails-mode">Enable Guardrails</Label>
         </div>
       </div>
       <p className="text-xl text-gray-500">
