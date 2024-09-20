@@ -26,7 +26,7 @@ const Banner = () => {
       <div className="absolute inset-0 bg-black bg-opacity-[50%] flex flex-col items-center justify-center text-white">
         <h1 className="text-5xl md:text-7xl font-bold mb-6 text-center">Fenz AI Agent Guard</h1>
         <p className="text-xl md:text-2xl mb-10 text-center max-w-2xl">
-          Ensure AI safety and integrity through AI Driven{' '}
+          Ensure AI Safety by Audit Intelligence{' '}
           <span className="mt-4 inline-flex space-x-2 text-3xl">
             <span className="font-bold text-yellow-400 animate-scale-yellow">EVALUATION</span>
             <span>|</span>
