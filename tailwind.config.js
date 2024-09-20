@@ -55,7 +55,33 @@ module.exports = {
   			md: "calc(var(--radius) - 2px)",
   			sm: "calc(var(--radius) - 4px)"
   		}
-  	}
+  	},
+  	keyframes: {
+  		'slide-up': {
+  			'0%, 20%': { transform: 'translateY(100%)', opacity: 0 },
+  			'30%, 50%': { transform: 'translateY(0)', opacity: 1 },
+  			'60%, 80%': { transform: 'translateY(0)', opacity: 1 },
+  			'90%, 100%': { transform: 'translateY(-100%)', opacity: 0 },
+  		},
+  		'scale-yellow': {
+  			'0%, 100%': { transform: 'scale(1)', color: '#FBBF24' },
+  			'50%': { transform: 'scale(1.05)', color: '#F59E0B' },
+  		},
+  		'scale-green': {
+  			'0%, 100%': { transform: 'scale(1)', color: '#10B981' },
+  			'50%': { transform: 'scale(1.05)', color: '#059669' },
+  		},
+  		'scale-red': {
+  			'0%, 100%': { transform: 'scale(1)', color: '#EF4444' },
+  			'50%': { transform: 'scale(1.05)', color: '#DC2626' },
+  		},
+  	},
+  	animation: {
+  		'slide-up': 'slide-up 9s cubic-bezier(0.4, 0, 0.2, 1) infinite',
+  		'scale-yellow': 'scale-yellow 2s ease-in-out infinite',
+  		'scale-green': 'scale-green 2s ease-in-out infinite 0.6s',
+  		'scale-red': 'scale-red 2s ease-in-out infinite 1.2s',
+  	},
   },
   plugins: [require("tailwindcss-animate")],
 };
