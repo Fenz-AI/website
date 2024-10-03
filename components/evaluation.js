@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
+import { saveAs } from 'file-saver';
 
 const topics = [
   "Violence & Hate",
@@ -43,6 +44,17 @@ const EvaluationModal = ({ isOpen, onOpenChange, name, selectedHealth, getHealth
 
   const toggleTopic = (topic) => {
     setExpandedTopics(prev => ({ ...prev, [topic]: !prev[topic] }));
+  };
+
+  const onDownload = () => {
+    fetch('/files/audit_report_sample.pdf')
+      .then(response => response.blob())
+      .then(blob => {
+        saveAs(blob, `${name}_audit_report.pdf`);
+      })
+      .catch(error => {
+        console.error('Error downloading the file:', error);
+      });
   };
 
   return (
@@ -97,7 +109,7 @@ const EvaluationModal = ({ isOpen, onOpenChange, name, selectedHealth, getHealth
           </div>
         </div>
         <div className="flex justify-end space-x-2">
-          <Button variant="secondary" onClick={() => console.log("Download PDF")}>
+          <Button variant="secondary" onClick={onDownload}>
             Download Analysis PDF
           </Button>
           <Button variant="default" onClick={() => onOpenChange(false)}>

@@ -7,6 +7,7 @@ import * as Progress from '@radix-ui/react-progress';
 import * as Dialog from '@radix-ui/react-dialog';
 import { ChevronDownIcon, ChevronUpIcon } from '@radix-ui/react-icons';
 import EvaluationDemo from "@/components/EvaluationDemo";
+import { saveAs } from 'file-saver';
 
 const llms = [
   {
@@ -58,6 +59,27 @@ const AuditIntro = () => {
     setProgress(0);
     setIsEvaluationComplete(false);
     setShowDialog(true);
+  };
+
+  const onDownload = () => {
+    fetch('/files/audit_report_sample.pdf')
+      .then(response => {
+        const contentDisposition = response.headers.get('content-disposition');
+        let filename = 'audit_report.pdf';
+        if (contentDisposition) {
+          const filenameMatch = contentDisposition.match(/filename="?(.+)"?/i);
+          if (filenameMatch && filenameMatch[1]) {
+            filename = filenameMatch[1];
+          }
+        }
+        return response.blob().then(blob => ({ blob, filename }));
+      })
+      .then(({ blob, filename }) => {
+        saveAs(blob, filename);
+      })
+      .catch(error => {
+        console.error('Error downloading the file:', error);
+      });
   };
 
   return (
@@ -129,7 +151,7 @@ const AuditIntro = () => {
                 <div className="w-full h-full flex flex-col gap-y-4">
                   <EvaluationDemo name={selectedLLM} />
                   <div className="flex justify-end space-x-2">
-                    <Button variant="secondary" onClick={() => console.log("Download PDF")}>Download Analysis PDF</Button>
+                    <Button variant="secondary" onClick={onDownload}>Download Analysis PDF</Button>
                     <Dialog.Close asChild>
                       <Button variant="default" onClick={() => setShowDialog(false)}>Close</Button>
                     </Dialog.Close>
