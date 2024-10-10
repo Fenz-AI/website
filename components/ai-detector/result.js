@@ -3,7 +3,7 @@ import TextResult from './TextResult';
 import { Button } from '@/components/ui/button';
 import { ArrowRightIcon } from '@radix-ui/react-icons';
 
-const AIDetectorResult = ({ result }) => {
+const AIDetectorResult = ({ results }) => {
   return (
     <div className="flex-grow w-full md:w-1/2 border border-gray-300 rounded-md p-4">
       <Tabs.Root
@@ -34,7 +34,7 @@ const AIDetectorResult = ({ result }) => {
           className="flex-grow p-5 bg-white rounded-b-md outline-none focus:shadow-[0_0_0_2px] focus:shadow-indigo-600 overflow-auto" // Added flex-grow and overflow-auto
           value="result"
         >
-          <TextResult result={result} />
+          <TextResult results={results} />
         </Tabs.Content>
         <Tabs.Content
           className="flex-grow p-5 bg-white rounded-b-md outline-none focus:shadow-[0_0_0_2px] focus:shadow-indigo-600 overflow-auto"

@@ -28,6 +28,21 @@ export default function RootLayout({ children }) {
           src="https://tally.so/widgets/embed.js"
           crossOrigin="anonymous"
         />
+        <Script strategy="lazyOnload" id="tally-config">
+          {`
+          window.TallyConfig = {
+            "formId": "nrLkBv",
+            "popup": {
+              "width": 480,
+              "emoji": {
+                "text": "👋",
+                "animation": "wave"
+              },
+              "overlay": true
+            }
+          };
+          `}
+        </Script>
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-100 text-gray-900 flex flex-col min-h-screen`}

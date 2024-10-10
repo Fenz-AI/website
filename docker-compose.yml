@@ -1,0 +1,12 @@
+version: "3.8"
+
+services:
+  fenz-web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: fenz-web:1.0
+    container_name: fenz-web
+    restart: unless-stopped
+    ports:
+      - "3000:3000"

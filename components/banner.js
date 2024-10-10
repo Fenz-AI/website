@@ -41,7 +41,7 @@ const Banner = () => {
           variant="custom" 
           className="bg-gradient-to-r from-blue-500 to-purple-600 text-white hover:from-blue-600 hover:to-purple-700 transition-all duration-300 text-lg px-8 py-3 rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1"
         >
-          Request a Demo
+          Get Your Free Audit Report
         </Button>
         </Link>
       </div>

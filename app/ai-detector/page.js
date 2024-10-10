@@ -9,27 +9,47 @@ import AIDetectorResult from "@/components/ai-detector/result"
 const AIDetectorPage = () => {
   const [text, setText] = useState("");
   const [isScanning, setIsScanning] = useState(false);
-  const [result, setResult] = useState(null);
+  const [results, setResults] = useState(null);
+
+  const splitIntoSentences = (text) => {
+    return text.match(/[^.!?]+[.!?]+/g) || [];
+  };
+
   const onScanClick = async () => {
     if (!text || text.length === 0) {
       return;
     }
+
+    const sentences = splitIntoSentences(text);
+    const newResults = [];
+
+
     setIsScanning(true);
-    try {
-      const response = await fetch("/api/predict/text", {
-        method: "POST",
-        body: JSON.stringify({ 
-          document: text,
-        }),
-      });
-      const data = await response.json();
-      console.log(data.data);
-      const results = data.data.documents.map((doc) => doc.classification);
-      setResult(results.includes("AI") && results.includes("Human") ? "Mixed" : results.includes("AI") ? "AI" : "Human");
-      setIsScanning(false);
-    } catch (error) {
-      console.error(error);
+    for (const sentence of sentences) {
+      try {
+        const response = await fetch("/api/predict/text", {
+          method: "POST",
+          body: JSON.stringify({ 
+            document: sentence.trim(),
+          }),
+        });
+
+        if (!response.ok) {
+          throw new Error('API request failed');
+        }
+
+        const data = await response.json();
+        console.log(data);
+        newResults.push({ sentence, isAI: data.data.documents[0].classification === "AI" });
+      } catch (error) {
+        console.error('Error detecting AI text:', error);
+        newResults.push({ sentence, isAI: false });
+      }
     }
+
+    setResults(newResults);
+    setIsScanning(false);
+
   }
 
   return (
@@ -45,7 +65,7 @@ const AIDetectorPage = () => {
       </div>
       <div className="w-full flex flex-col md:flex-row justify-between space-y-4 md:space-y-0 md:space-x-4">
         <AIDetectorInput onScanClick={onScanClick} text={text} setText={setText} isScanning={isScanning} />
-        <AIDetectorResult result={result} />
+        <AIDetectorResult results={results} />
       </div>
     </div>
   );
