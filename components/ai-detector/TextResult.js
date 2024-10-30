@@ -1,31 +1,58 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 const TextResult = ({ results }) => {
+  const [displayedText, setDisplayedText] = useState('');
+  const [aiRate, setAiRate] = useState(0);
+
+  useEffect(() => {
+    if (!results || results.length === 0) {
+      setDisplayedText('');
+      setAiRate(0);
+      return;
+    }
+
+    let totalLength = 0;
+    let aiCount = 0;
+    let displayText = '';
+
+    const animateText = async () => {
+      for (const result of results) {
+        for (let i = 0; i < result.substring.length; i++) {
+          displayText += result.substring[i];
+          setDisplayedText(displayText);
+          await new Promise(resolve => setTimeout(resolve, 20)); // Adjust speed here
+        }
+        totalLength += result.substring.length;
+        if (result.isAI) {
+          aiCount += result.substring.length;
+        }
+        setAiRate((aiCount / totalLength) * 100);
+      }
+    };
+
+    animateText();
+  }, [results]);
+
   if (!results) {
     return null;
   }
 
-  const totalLength = results.reduce((sum, result) => sum + result.sentence.length, 0);
-  const aiCount = results.filter(result => result.isAI).reduce((sum, result) => sum + result.sentence.length, 0);
-  const aiRate = (aiCount / totalLength) * 100;
-
   return (
-    <div className="w-full h-full text-left whitespace-pre-wrap">
-      {results.length > 0 && (
-        <div className="whitespace-pre-wrap">
-          {results.map((result, index) => (
-              <span
-                key={index}
-                className={`${
-                  result.isAI ? 'bg-red-200' : 'bg-green-200'
-                } inline`}
-              >
-                {result.sentence}
-              </span>
-            ))}
-        </div>
-      )}
-      <div className="w-full text-right font-bold">
+    <div className="h-full flex flex-col text-lg">
+      <div className="flex-grow overflow-y-auto whitespace-pre-wrap">
+        {displayedText.split('').map((char, index) => {
+          const resultIndex = results.findIndex(result => 
+            index < result.substring.length + (results.slice(0, results.indexOf(result)).reduce((sum, r) => sum + r.substring.length, 0))
+          );
+          const isAI = results[resultIndex]?.isAI;
+          return (
+            <span key={index} className={`${isAI ? 'bg-red-200' : 'bg-green-200'}`}>
+              {char}
+            </span>
+          );
+        })}
+      </div>
+      <div className="text-right font-bold mt-2">
         AI Rate: {aiRate.toFixed(2)}%
       </div>
     </div>

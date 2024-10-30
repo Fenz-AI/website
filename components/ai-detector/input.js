@@ -2,6 +2,7 @@
 
 import { useRef } from "react"
 import { Button } from "@/components/ui/button"
+import { ArrowRightIcon } from '@radix-ui/react-icons';
 import mammoth from "mammoth"
 
 const AIDetectorInput = ({ onScanClick, text, setText, isScanning }) => {
@@ -12,7 +13,7 @@ const AIDetectorInput = ({ onScanClick, text, setText, isScanning }) => {
   };
 
   const characterCount = text.length;
-  const characterLimit = 1000;
+  const characterLimit = 100000;
 
   const handleUploadClick = () => {
     fileInputRef.current.click()
@@ -58,10 +59,16 @@ const AIDetectorInput = ({ onScanClick, text, setText, isScanning }) => {
   }
 
   return (
-    <div className="flex-grow w-full md:w-1/2 border border-gray-300 rounded-md p-4">
-      <div className="flex justify-between items-center">
-        <h1 className="text-2xl font-bold mb-2">Scan Your Text</h1>
-        <Button variant="outline" onClick={handleUploadClick}>Upload File (.txt, .doc, .docx)</Button>
+    <div className="bg-white/80 backdrop-blur-sm w-full flex-grow flex flex-col md:w-1/2 rounded-lg shadow-lg p-4">
+      <div className="flex justify-between items-center mb-4">
+        <h1 className="text-2xl font-bold">Scan Your Text</h1>
+        <Button
+          variant="classic"
+          className="hover:bg-gray-100 hover:text-gray-900 transition-all duration-300"
+          onClick={handleUploadClick}
+        >
+          Upload File (.txt, .doc, .docx)
+        </Button>
         <input
           type="file"
           ref={fileInputRef}
@@ -71,7 +78,7 @@ const AIDetectorInput = ({ onScanClick, text, setText, isScanning }) => {
         />
       </div>
       <textarea
-        className="mt-4 w-full h-96 p-2 border border-gray-300 rounded-md border-none outline-none resize-none"
+        className="flex-grow w-full p-4 resize-none overflow-y-auto outline-none text-lg bg-transparent font-monaspace_neon"
         placeholder="Enter your text here or upload a .txt, .doc, or .docx file"
         value={text}
         onChange={onChange}
@@ -79,7 +86,17 @@ const AIDetectorInput = ({ onScanClick, text, setText, isScanning }) => {
       ></textarea>
       <div className="mt-4 flex justify-between items-center">
         <span>{characterCount} / {characterLimit} characters</span>
-        <Button onClick={onScanClick} disabled={isScanning}>{isScanning ? "Scanning..." : "Scan"}</Button>
+        <Button
+          className="w-48 text-lg"
+          onClick={onScanClick} disabled={isScanning}
+        >
+          {isScanning ? "Scanning..." : (
+            <>
+              Scan for AI
+              <ArrowRightIcon className="w-4 h-4 ml-2 text-white" />
+            </>
+          )}
+        </Button>
       </div>
     </div>
   );

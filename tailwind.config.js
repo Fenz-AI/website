@@ -8,6 +8,11 @@ module.exports = {
   ],
   theme: {
   	extend: {
+			fontFamily: {
+        monaspace_krypton: ["MonaspaceKrypton"],
+        monaspace_neon: ["MonaspaceNeon"],
+				monaspace_xenon: ["MonaspaceXenon"],
+      },
   		colors: {
   			background: "hsl(var(--background))",
   			foreground: "hsl(var(--foreground))",

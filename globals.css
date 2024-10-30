@@ -68,3 +68,33 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+@layer base {
+  @font-face {
+    font-family: "MonaspaceNeon";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(/fonts/MonaspaceNeon-Regular.woff2) format("woff2");
+  }
+}
+
+@layer base {
+  @font-face {
+    font-family: "MonaspaceKrypton";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(/fonts/MonaspaceKrypton-Regular.woff2) format("woff2");
+  }
+}
+
+@layer base {
+  @font-face {
+    font-family: "MonaspaceXenon";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(/fonts/MonaspaceXenon-Regular.woff2) format("woff2");
+  }
+}
