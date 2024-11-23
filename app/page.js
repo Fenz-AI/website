@@ -14,8 +14,6 @@ const Home = () => {
         <Features />
         <AgentsIntro />
         <AuditIntro />
-        <DashboardIntro />
-        <GuardIntro />
       </main>
       <Footer />
     </div>
