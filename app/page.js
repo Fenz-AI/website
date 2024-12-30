@@ -5,6 +5,7 @@ import AuditIntro from "@/components/AuditIntro";
 import DashboardIntro from "@/components/DashboardIntro";
 import GuardIntro from "@/components/GuardIntro";
 import Footer from "@/components/footer";
+import People from "@/components/people";
 
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
         <Features />
         <AgentsIntro />
         <AuditIntro />
+        <People />
       </main>
       <Footer />
     </div>
