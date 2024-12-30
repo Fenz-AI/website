@@ -2,10 +2,10 @@ import Banner from "@/components/banner";
 import Features from "@/components/features";
 import AgentsIntro from "@/components/AgentsIntro";
 import AuditIntro from "@/components/AuditIntro";
-import DashboardIntro from "@/components/DashboardIntro";
-import GuardIntro from "@/components/GuardIntro";
 import Footer from "@/components/footer";
-import People from "@/components/people";
+import ResearchLogos from "@/components/researchLogos";
+import TargetCompanyLogos from "@/components/targetCompany";
+import PartnerCompanyLogos from "@/components/partnerCompany";
 
 const Home = () => {
   return (
@@ -15,7 +15,9 @@ const Home = () => {
         <Features />
         <AgentsIntro />
         <AuditIntro />
-        <People />
+        <ResearchLogos />
+        <TargetCompanyLogos />
+        <PartnerCompanyLogos />
       </main>
       <Footer />
     </div>
