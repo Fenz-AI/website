@@ -1,11 +1,12 @@
 import Logo from "./Logo";
 const logos = [
-  { src: "/images/campus_logos/stanford.png", alt: "University Logo" },
-  { src: "/images/campus_logos/uw.png", alt: "University Logo" },
-  { src: "/images/campus_logos/neu.png", alt: "University Logo" },
-  { src: "/images/campus_logos/Tsinghua.png", alt: "University Logo" },
-  { src: "/images/campus_logos/fudan.png", alt: "University Logo" },
-  { src: "/images/campus_logos/wuhan.png", alt: "University Logo" },
+  { src: "/images/target_company_logos/chatgpt.png", alt: "Company Logo" },
+  { src: "/images/target_company_logos/claude.png", alt: "Company Logo" },
+  { src: "/images/target_company_logos/cohere.png", alt: "Company Logo" },
+  { src: "/images/target_company_logos/ai21.png", alt: "Company Logo" },
+  { src: "/images/target_company_logos/deepseek.png", alt: "Company Logo" },
+  { src: "/images/target_company_logos/llama.png", alt: "Company Logo" },
+  { src: "/images/target_company_logos/mistral.png", alt: "Company Logo" },
 ];
 const TargetCompanyLogos = () => {
   return (
