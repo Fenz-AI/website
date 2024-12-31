@@ -2,8 +2,8 @@ import Logo from "./Logo";
 
 const logos = [
   { src: "/images/campus_logos/stanford.png", alt: "Stanford University Logo" },
-  { src: "/images/campus_logos/uw.png", alt: "University of Washington Logo" },
   { src: "/images/campus_logos/neu.png", alt: "Northeastern University Logo" },
+  { src: "/images/campus_logos/uw.png", alt: "University of Washington Logo" },
   { src: "/images/campus_logos/Tsinghua.png", alt: "Tsinghua University Logo" },
   { src: "/images/campus_logos/fudan.png", alt: "Fudan University Logo" },
   { src: "/images/campus_logos/wuhan.png", alt: "Wuhan University Logo" },
@@ -14,7 +14,7 @@ const ResearchLogos = () => {
     <section className="py-20 bg-gradient-to-b from-white to-gray-100">
       <div className="container mx-auto px-6 max-w-7xl text-center">
         <h2 className="text-4xl font-extrabold text-gray-800 mb-10">
-          Our Research Partners
+          Our Teams
         </h2>
         <p className="text-lg text-gray-600 leading-relaxed max-w-4xl mx-auto mb-12">
           We are a collaborative research group composed of students and
