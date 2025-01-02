@@ -6,7 +6,6 @@ import Footer from "@/components/footer";
 import ResearchLogos from "@/components/researchLogos";
 import TargetCompanyLogos from "@/components/targetCompany";
 import PartnerCompanyLogos from "@/components/partnerCompany";
-import NextJsCarousel from "@/components/carousel";
 
 const Home = () => {
   return (
@@ -19,7 +18,6 @@ const Home = () => {
         <ResearchLogos />
         <TargetCompanyLogos />
         <PartnerCompanyLogos />
-        <NextJsCarousel />
       </main>
       <Footer />
     </div>
