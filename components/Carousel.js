@@ -6,7 +6,7 @@ import Autoplay from "embla-carousel-autoplay";
 import Image from "next/image";
 
 export default function EmblaCarousel({ images }) {
-  const [emblaRef] = useEmblaCarousel({ loop: false }, [
+  const [emblaRef] = useEmblaCarousel({ loop: true }, [
     Autoplay({ delay: 2000 }),
   ]);
   const allImages = images;
