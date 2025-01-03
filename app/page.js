@@ -2,10 +2,7 @@ import Banner from "@/components/banner";
 import Features from "@/components/features";
 import AgentsIntro from "@/components/AgentsIntro";
 import AuditIntro from "@/components/AuditIntro";
-import DashboardIntro from "@/components/DashboardIntro";
-import GuardIntro from "@/components/GuardIntro";
-import Footer from "@/components/footer";
-import People from "@/components/people";
+import Leaderboard from "@/components/Leaderboard";
 
 const Home = () => {
   return (
@@ -15,9 +12,8 @@ const Home = () => {
         <Features />
         <AgentsIntro />
         <AuditIntro />
-        <People />
+        <Leaderboard />
       </main>
-      <Footer />
     </div>
   );
 };

@@ -1,0 +1,80 @@
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
+import data from "@/public/data/leaderboard.json";
+
+const Leaderboard = () => {
+  return (
+    <div className="container mx-auto px-4 py-12 max-w-7xl">
+      <h1 className="text-4xl font-bold text-center mb-12 text-gray-800 dark:text-gray-100">
+        Leaderboard
+      </h1>
+      
+      <div className="rounded-lg border shadow-sm bg-white dark:bg-gray-950">
+        <Table>
+          <TableHeader>
+            <TableRow className="bg-gray-50 dark:bg-gray-900">
+              <TableHead className="w-[180px] font-bold">Company</TableHead>
+              <TableHead className="font-bold">Product</TableHead>
+              <TableHead className="text-right font-bold">Overall Score</TableHead>
+              <TableHead className="text-right">Self Harm</TableHead>
+              <TableHead className="text-right">CSAM</TableHead>
+              <TableHead className="text-right">Violence</TableHead>
+              <TableHead className="text-right">Weapons</TableHead>
+              <TableHead className="text-right">Criminal</TableHead>
+              <TableHead className="text-right">Sexual</TableHead>
+              <TableHead className="text-right">Discrimination</TableHead>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+            {data
+              .sort((a, b) => b.overall_score - a.overall_score)
+              .map((item) => (
+                <TableRow 
+                  key={`${item.company}_${item.product}`}
+                  className="hover:bg-gray-50 dark:hover:bg-gray-900 transition-colors"
+                >
+                  <TableCell className="font-medium">
+                    <a
+                      href={item.url}
+                      className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 hover:underline transition-colors"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {item.company}
+                    </a>
+                  </TableCell>
+                  <TableCell>{item.product}</TableCell>
+                  {/* 90+ is green, 80-89 is yellow, 0-79 is red */}
+                  <TableCell className={
+                    `
+                      text-right font-semibold 
+                      ${item.overall_score > 90 ? 'text-green-600 dark:text-green-400' : ''}
+                      ${item.overall_score > 80 && item.overall_score < 90 ? 'text-yellow-600 dark:text-yellow-400' : ''}
+                      ${item.overall_score < 80 ? 'text-red-600 dark:text-red-400' : ''}
+                    `
+                  }>
+                    {item.overall_score}%
+                  </TableCell>
+                  <TableCell className="text-right">{item.suicide_self_harm}%</TableCell>
+                  <TableCell className="text-right">{item.child_pornography}%</TableCell>
+                  <TableCell className="text-right">{item.violence_hate}%</TableCell>
+                  <TableCell className="text-right">{item.illegal_weapons}%</TableCell>
+                  <TableCell className="text-right">{item.criminal_planning}%</TableCell>
+                  <TableCell className="text-right">{item.sexual_content}%</TableCell>
+                  <TableCell className="text-right">{item.lgbtq_discrimination}%</TableCell>
+                </TableRow>
+              ))}
+          </TableBody>
+        </Table>
+      </div>
+    </div>
+  );
+};
+
+export default Leaderboard;
