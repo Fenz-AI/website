@@ -1,5 +1,4 @@
 import tailwindcssAnimate from "tailwindcss-animate";
-import daisyui from "daisyui";
 
 /** @type {import('tailwindcss').Config} */
 const config = {
@@ -124,10 +123,10 @@ const config = {
   		'slide-up': 'slide-up 9s cubic-bezier(0.4, 0, 0.2, 1) infinite',
   		'scale-yellow': 'scale-yellow 2s ease-in-out infinite',
   		'scale-green': 'scale-green 2s ease-in-out infinite 0.6s',
-  		'scale-red': 'scale-red 2s ease-in-out infinite 1.2s'
-  	}
+      "scale-red": "scale-red 2s ease-in-out infinite 1.2s",
+    },
   },
-  plugins: [tailwindcssAnimate, daisyui, require("tailwindcss-animate")],
+  plugins: [tailwindcssAnimate],
 };
 
 export default config;
