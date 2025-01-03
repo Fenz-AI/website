@@ -1,7 +1,4 @@
-"use client";
 import Logo from "./Logo";
-import { Button } from "./ui/button";
-import { useRouter } from "next/navigation";
 
 const logos = [
   { src: "/images/campus_logos/stanford.png", alt: "Stanford University Logo" },
@@ -13,13 +10,6 @@ const logos = [
 ];
 
 const ResearchLogos = () => {
-  const router = useRouter();
-
-  const navigateToAbout = () => {
-    console.log("navigate to about page");
-    router.push("/about");
-  };
-
   return (
     <section className="py-20 bg-gradient-to-b from-white to-gray-100">
       <div className="container mx-auto px-6 max-w-7xl text-center">
@@ -33,7 +23,7 @@ const ResearchLogos = () => {
           unbiased evaluations of AI agents, bridging the gap between academia
           and industry.
         </p>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-10 items-center mb-10">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-10 items-center">
           {logos.map((item, index) => (
             <div
               className="flex justify-center items-center transform hover:scale-105 transition duration-300"
@@ -43,12 +33,6 @@ const ResearchLogos = () => {
             </div>
           ))}
         </div>
-        <Button
-          className="bg-black hover:bg-gray-800 text-white text-md px-4 py-2 rounded-md transition-colors duration-300"
-          onClick={navigateToAbout}
-        >
-          Learn More
-        </Button>
       </div>
     </section>
   );
