@@ -1,5 +1,12 @@
 import Logo from "./Logo";
-const logos = [{ src: "/images/people.jpg", alt: "Partner Logo" }];
+const logos = [
+  { src: "/images/campus_logos/stanford.png", alt: "University Logo" },
+  { src: "/images/campus_logos/uw.png", alt: "University Logo" },
+  { src: "/images/campus_logos/neu.png", alt: "University Logo" },
+  { src: "/images/campus_logos/Tsinghua.png", alt: "University Logo" },
+  { src: "/images/campus_logos/fudan.png", alt: "University Logo" },
+  { src: "/images/campus_logos/wuhan.png", alt: "University Logo" },
+];
 const PartnerCompanyLogos = () => {
   return (
     <section className="py-16 bg-gray-50">
