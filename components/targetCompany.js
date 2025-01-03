@@ -1,5 +1,4 @@
 import Logo from "./Logo";
-import EmblaCarousel from "@/components/Carousel";
 
 const logos = [
   { src: "/images/target_company_logos/chatgpt.png", alt: "ChatGPT Logo" },
@@ -18,8 +17,16 @@ const TargetCompanyLogos = () => {
         <h2 className="text-4xl font-extrabold text-gray-800 mb-16">
           The Company We Are Auditing
         </h2>
-
-        <EmblaCarousel images={logos} />
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 items-center">
+          {logos.map((item, index) => (
+            <div
+              className="flex justify-center items-center transform hover:scale-105 transition duration-300"
+              key={index}
+            >
+              <Logo src={item.src} alt={item.alt} width={300} height={100} />
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
