@@ -9,13 +9,7 @@ const PartnerCompanyLogos = () => {
         </h2>
         <div className="flex flex-wrap gap-6 justify-center">
           {logos.map((item, index) => (
-            <Logo
-              key={index}
-              src={item.src}
-              alt={item.alt}
-              width={180}
-              height={60}
-            />
+            <Logo key={index} src={item.src} alt={item.alt} />
           ))}
         </div>
       </div>

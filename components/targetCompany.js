@@ -1,30 +1,23 @@
 import Logo from "./Logo";
-
 const logos = [
-  { src: "/images/target_company_logos/chatgpt.png", alt: "ChatGPT Logo" },
-  { src: "/images/target_company_logos/claude.png", alt: "Claude Logo" },
-  { src: "/images/target_company_logos/cohere.png", alt: "Cohere Logo" },
-  { src: "/images/target_company_logos/ai21.png", alt: "AI21 Logo" },
-  { src: "/images/target_company_logos/deepseek.png", alt: "DeepSeek Logo" },
-  { src: "/images/target_company_logos/llama.png", alt: "LLaMA Logo" },
-  { src: "/images/target_company_logos/mistral.png", alt: "Mistral Logo" },
+  { src: "/images/target_company_logos/chatgpt.png", alt: "Company Logo" },
+  { src: "/images/target_company_logos/claude.png", alt: "Company Logo" },
+  { src: "/images/target_company_logos/cohere.png", alt: "Company Logo" },
+  { src: "/images/target_company_logos/ai21.png", alt: "Company Logo" },
+  { src: "/images/target_company_logos/deepseek.png", alt: "Company Logo" },
+  { src: "/images/target_company_logos/llama.png", alt: "Company Logo" },
+  { src: "/images/target_company_logos/mistral.png", alt: "Company Logo" },
 ];
-
 const TargetCompanyLogos = () => {
   return (
-    <section className="py-20 bg-gradient-to-b from-white to-gray-100">
-      <div className="container mx-auto px-6 max-w-7xl text-center">
-        <h2 className="text-4xl font-extrabold text-gray-800 mb-16">
-          Partnering with Industry Leaders
+    <section className="py-16 bg-gray-50">
+      <div className="container mx-auto px-4 max-w-6xl">
+        <h2 className="text-3xl font-bold text-center mb-12">
+          The Companies Undergoing Audits
         </h2>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 items-center">
+        <div className="flex flex-wrap gap-6 justify-center">
           {logos.map((item, index) => (
-            <div
-              className="flex justify-center items-center transform hover:scale-105 transition duration-300"
-              key={index}
-            >
-              <Logo src={item.src} alt={item.alt} width={300} height={100} />
-            </div>
+            <Logo key={index} src={item.src} alt={item.alt} />
           ))}
         </div>
       </div>
