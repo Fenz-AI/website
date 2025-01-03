@@ -12,8 +12,11 @@ const Footer = () => {
             <Link href="#" className="text-sm hover:text-gray-300">
               About
             </Link>
-            <Link href="#tally-open=nrLkBv&tally-layout=modal&tally-emoji-text=👋&tally-emoji-animation=wave" className="text-sm hover:text-gray-300">
-              Contact
+            <Link
+              href="mailto:contact@fenz.ai"
+              className="text-sm hover:text-gray-300"
+            >
+              contact@fenz.ai
             </Link>
           </nav>
         </div>
