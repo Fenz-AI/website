@@ -6,6 +6,7 @@ import Footer from "@/components/footer";
 import ResearchLogos from "@/components/researchLogos";
 import TargetCompanyLogos from "@/components/targetCompany";
 import PartnerCompanyLogos from "@/components/partnerCompany";
+import Header from "@/components/Header";
 
 const Home = () => {
   return (
