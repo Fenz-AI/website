@@ -14,13 +14,13 @@ const Header = () => {
         />
       </div>
       <div className="navbar-end">
-        <div className="px-6 text-2xl">
+        <div className="nav-bar-button px-6 text-2xl hover:bg-slate-400">
           <Link href="/">Home</Link>
         </div>
-        <div className="px-6 text-2xl">
+        <div className="nav-bar-button px-6 text-2xl hover:bg-slate-400">
           <Link href="/blog">Blog</Link>
         </div>
-        <div className="px-6 text-2xl">
+        <div className="nav-bar-button px-6 text-2xl hover:bg-slate-400">
           <Link href="/about">About</Link>
         </div>
       </div>

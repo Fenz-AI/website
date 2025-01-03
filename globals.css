@@ -109,12 +109,3 @@ body {
   flex: 0 0 100%;
   min-width: 0;
 }
-
-/* .hover-link {
-  text-decoration: none;
-  color: rgb(151, 138, 138);
-  font-size: 16px;
-  transition:
-    color 0.3s ease,
-    text-shadow 0.3s ease;
-} */

@@ -6,7 +6,7 @@
   transition:
     transform 0.2s ease-in-out,
     box-shadow 0.2s ease-in-out;
-  background-color: #f0efef;
+  background-color: #d8e4bc;
 }
 
 .card:hover {
@@ -28,7 +28,7 @@
 .button {
   display: inline-block;
   padding: 8px 16px;
-  background-color: #a2a1a1;
+  background-color: #87a96b;
   color: #fff;
   border-radius: 4px;
   text-decoration: none;
@@ -37,5 +37,6 @@
 }
 
 .button:hover {
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+  background-color: #568203;
+  /* rgb(#568203 / var(--tw-bg-opacity)); */
 }
