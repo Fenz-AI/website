@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const Header = () => {
   return (
-    <header className="navbar bg-base-100">
+    <header className="navbar bg-white">
       <div className="navbar-start px-3">Logo</div>
       <div className="navbar-end">
         <div className="px-3">
