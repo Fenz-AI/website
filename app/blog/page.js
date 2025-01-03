@@ -5,20 +5,38 @@ import Card from "@/components/BlogCard";
 const blogPosts = [
   {
     id: "1",
-    title: "Introduction to Next.js",
-    excerpt: "Learn the basics of Next.js in this article.",
+    title: "Blog 1",
+    excerpt: "Learn the basics of AI Agent in this article.",
     date: "Jan 2, 2024",
   },
   {
     id: "2",
-    title: "Next.js Routing",
-    excerpt: "Understand routing in Next.js with examples.",
+    title: "Blog 2",
+    excerpt: "Understand prompts in AI Agent with examples.",
     date: "Jan 5, 2024",
   },
   {
     id: "3",
-    title: "Next.js Data Fetching",
-    excerpt: "Explore data fetching methods in Next.js.",
+    title: "Blog 3",
+    excerpt: "Explore data fetching methods in AI Agent.",
+    date: "Jan 7, 2024",
+  },
+  {
+    id: "4",
+    title: "Blog 4",
+    excerpt: "Learn the basics of AI Agent in this article.",
+    date: "Jan 2, 2024",
+  },
+  {
+    id: "5",
+    title: "Blog 5",
+    excerpt: "Understand prompts in AI Agent with examples.",
+    date: "Jan 5, 2024",
+  },
+  {
+    id: "6",
+    title: "Blog 6",
+    excerpt: "Explore data fetching methods in AI Agent.",
     date: "Jan 7, 2024",
   },
 ];

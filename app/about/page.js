@@ -14,9 +14,27 @@ const about = () => {
     <section className="py-20 bg-gradient-to-b from-white to-gray-100">
       <div className="container mx-auto px-6 max-w-7xl text-center">
         <h2 className="text-4xl font-extrabold text-gray-800 mb-10">
+          Our Mission
+        </h2>
+        <p className="text-justify text-gray-600 leading-relaxed max-w-4xl mx-auto mb-12">
+          In the rapidly evolving world of artificial intelligence, ensuring
+          that AI agents perform effectively, ethically, and reliably is
+          paramount. At Fenz.ai, we specialize in developing cutting-edge
+          evaluation frameworks and methodologies tailored to assess AI systems
+          across diverse industries. Our team combines expertise in machine
+          learning, data science, behavioral analysis, and human-centered design
+          to create robust evaluation tools. We aim to measure not just
+          technical performance, but also the societal impact, ethical
+          considerations, and long-term sustainability of AI solutions. Through
+          rigorous testing, innovative metrics, and transparent processes, we
+          empower businesses and organizations to trust and optimize their AI
+          agents. Together, we’re shaping the future of responsible AI
+          development—one evaluation at a time.
+        </p>
+        <h2 className="text-4xl font-extrabold text-gray-800 mb-10">
           Our Teams
         </h2>
-        <p className="text-lg text-gray-600 leading-relaxed max-w-4xl mx-auto mb-12">
+        <p className="text-justify text-gray-600 leading-relaxed max-w-4xl mx-auto mb-12">
           We are a collaborative research group composed of students and
           scholars from top universities around the world, united by a shared
           passion for advancing AI technologies. Our mission is to provide
@@ -33,16 +51,6 @@ const about = () => {
             </div>
           ))}
         </div>
-        <h2 className="text-4xl font-extrabold text-gray-800 mb-10">
-          Our Mission
-        </h2>
-        <p className="text-lg text-gray-600 leading-relaxed max-w-4xl mx-auto mb-12">
-          We are a collaborative research group composed of students and
-          scholars from top universities around the world, united by a shared
-          passion for advancing AI technologies. Our mission is to provide
-          unbiased evaluations of AI agents, bridging the gap between academia
-          and industry.
-        </p>
       </div>
     </section>
   );
