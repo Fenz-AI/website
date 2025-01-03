@@ -1,7 +1,6 @@
 import localFont from "next/font/local";
 import Script from "next/script";
 import "@/globals.css";
-import Header from "@/components/Header";
 
 /*
 const geistSans = localFont({
@@ -19,8 +18,7 @@ const geistMono = localFont({
 
 export const metadata = {
   title: "Fenz AI | AI Safety Guardrails",
-  description:
-    "Evaluate your AI products and LLMs for safety and societal impact.",
+  description: "Evaluate your AI products and LLMs for safety and societal impact.",
 };
 
 export default function RootLayout({ children }) {
@@ -48,8 +46,9 @@ export default function RootLayout({ children }) {
           `}
         </Script>
       </head>
-      <body className="antialiased bg-gray-100 text-gray-900 flex flex-col min-h-screen">
-        <Header />
+      <body
+        className="antialiased bg-gray-100 text-gray-900 flex flex-col min-h-screen"
+      >
         {children}
       </body>
     </html>
