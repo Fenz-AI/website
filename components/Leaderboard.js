@@ -11,7 +11,7 @@ import data from "@/public/data/leaderboard.json";
 const Leaderboard = () => {
   return (
     <div className="w-full px-4 py-12 bg-gray-50">
-      <h1 className="text-4xl font-bold text-center mb-12 text-gray-800 dark:text-gray-100">
+      <h1 className="text-2xl md:text-4xl font-bold text-center mb-12 text-gray-800 dark:text-gray-100">
         AI Safety Leaderboard
       </h1>
       <p className="text-lg text-center mb-12 text-gray-600 dark:text-gray-400">

@@ -1,6 +1,7 @@
 import Script from "next/script";
 import "@/globals.css";
 import Footer from "@/components/footer";
+import Navbar from "@/components/navbar";
 
 export const metadata = {
   title: "Fenz AI | AI Safety Guardrails",
@@ -33,8 +34,9 @@ export default function RootLayout({ children }) {
         </Script>
       </head>
       <body
-        className="antialiased bg-gray-100 text-gray-900 flex flex-col min-h-screen"
+        className="w-full antialiased bg-gray-100 text-gray-900 flex flex-col min-h-screen items-center"
       >
+        <Navbar />
         {children}
         <Footer />
       </body>
