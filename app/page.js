@@ -10,9 +10,9 @@ const Home = () => {
       <main className="flex-grow">
         <Banner />
         <Features />
+        <Leaderboard />
         <AgentsIntro />
         <AuditIntro />
-        <Leaderboard />
       </main>
     </div>
   );

@@ -10,12 +10,16 @@ import data from "@/public/data/leaderboard.json";
 
 const Leaderboard = () => {
   return (
-    <div className="container mx-auto px-4 py-12 max-w-7xl">
+    <div className="w-full px-4 py-12 bg-gray-50">
       <h1 className="text-4xl font-bold text-center mb-12 text-gray-800 dark:text-gray-100">
-        Leaderboard
+        AI Safety Leaderboard
       </h1>
-      
-      <div className="rounded-lg border shadow-sm bg-white dark:bg-gray-950">
+      <p className="text-lg text-center mb-12 text-gray-600 dark:text-gray-400">
+        Tracking and comparing AI models&apos; ability to handle sensitive content and maintain ethical boundaries. 
+        Our comprehensive scoring system evaluates performance across multiple safety metrics including content 
+        moderation, harm prevention, and ethical compliance.
+      </p>
+      <div className="max-w-7xl mx-auto rounded-lg border shadow-sm bg-white dark:bg-gray-950">
         <Table>
           <TableHeader>
             <TableRow className="bg-gray-50 dark:bg-gray-900">
@@ -59,15 +63,15 @@ const Leaderboard = () => {
                       ${item.overall_score < 80 ? 'text-red-600 dark:text-red-400' : ''}
                     `
                   }>
-                    {item.overall_score}%
+                    {item.overall_score}
                   </TableCell>
-                  <TableCell className="text-right">{item.suicide_self_harm}%</TableCell>
-                  <TableCell className="text-right">{item.child_pornography}%</TableCell>
-                  <TableCell className="text-right">{item.violence_hate}%</TableCell>
-                  <TableCell className="text-right">{item.illegal_weapons}%</TableCell>
-                  <TableCell className="text-right">{item.criminal_planning}%</TableCell>
-                  <TableCell className="text-right">{item.sexual_content}%</TableCell>
-                  <TableCell className="text-right">{item.lgbtq_discrimination}%</TableCell>
+                  <TableCell className={`text-right ${item.suicide_self_harm > 0 ? 'text-red-600 dark:text-red-400' : 'text-green-600 dark:text-green-400'}`}>{item.suicide_self_harm}</TableCell>
+                  <TableCell className={`text-right ${item.child_pornography > 0 ? 'text-red-600 dark:text-red-400' : 'text-green-600 dark:text-green-400'}`}>{item.child_pornography}</TableCell>
+                  <TableCell className={`text-right ${item.violence_hate > 0 ? 'text-red-600 dark:text-red-400' : 'text-green-600 dark:text-green-400'}`}>{item.violence_hate}</TableCell>
+                  <TableCell className={`text-right ${item.illegal_weapons > 0 ? 'text-red-600 dark:text-red-400' : 'text-green-600 dark:text-green-400'}`}>{item.illegal_weapons}</TableCell>
+                  <TableCell className={`text-right ${item.criminal_planning > 0 ? 'text-red-600 dark:text-red-400' : 'text-green-600 dark:text-green-400'}`}>{item.criminal_planning}</TableCell>
+                  <TableCell className={`text-right ${item.sexual_content > 0 ? 'text-red-600 dark:text-red-400' : 'text-green-600 dark:text-green-400'}`}>{item.sexual_content}</TableCell>
+                  <TableCell className={`text-right ${item.lgbtq_discrimination > 0 ? 'text-red-600 dark:text-red-400' : 'text-green-600 dark:text-green-400'}`}>{item.lgbtq_discrimination}</TableCell>
                 </TableRow>
               ))}
           </TableBody>
