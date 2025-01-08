@@ -37,7 +37,7 @@ export default function RootLayout({ children }) {
         className="w-full antialiased bg-gray-100 text-gray-900 flex flex-col min-h-screen items-center"
       >
         <Navbar />
-        {children}
+        <main className="flex-1">{children}</main>
         <Footer />
       </body>
     </html>

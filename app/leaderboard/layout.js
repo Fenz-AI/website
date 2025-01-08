@@ -1,6 +1,6 @@
 const LeaderboardLayout = ({ children }) => {
   return (
-    <div className="w-[90%]">
+    <div className="w-full">
       {children}
     </div>
   );

@@ -145,7 +145,6 @@ body {
     src: url(/fonts/MonaspaceXenon-Regular.woff2) format("woff2");
   }
 }
-
 @layer base {
   * {
     @apply border-border;

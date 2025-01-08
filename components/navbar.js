@@ -7,6 +7,7 @@ import Image from "next/image";
 const links = [
   { name: "Home", href: "/" },
   { name: "Leaderboard", href: "/leaderboard" },
+  { name: "Blog", href: "/blog" },
 ];
 
 const Navbar = () => {
