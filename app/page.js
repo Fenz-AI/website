@@ -3,6 +3,8 @@ import Features from "@/components/features";
 import AgentsIntro from "@/components/AgentsIntro";
 import AuditIntro from "@/components/AuditIntro";
 import Leaderboard from "@/components/Leaderboard";
+import AuditingList from "@/components/auditing-list";
+import TeamLogos from "@/components/team-logos";
 
 const Home = () => {
   return (
@@ -13,6 +15,8 @@ const Home = () => {
         <Leaderboard />
         <AgentsIntro />
         <AuditIntro />
+        <AuditingList />
+        <TeamLogos />
       </main>
     </div>
   );

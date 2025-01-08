@@ -117,13 +117,23 @@ const config = {
   				transform: 'scale(1.05)',
   				color: '#DC2626'
   			}
-  		}
+  		},
+  		marquee: {
+  			'0%': { transform: 'translateX(0%)' },
+  			'100%': { transform: 'translateX(-100%)' },
+  		},
+  		'marquee-reverse': {
+  			'0%': { transform: 'translateX(-100%)' },
+  			'100%': { transform: 'translateX(0%)' },
+  		},
   	},
   	animation: {
   		'slide-up': 'slide-up 9s cubic-bezier(0.4, 0, 0.2, 1) infinite',
   		'scale-yellow': 'scale-yellow 2s ease-in-out infinite',
   		'scale-green': 'scale-green 2s ease-in-out infinite 0.6s',
       "scale-red": "scale-red 2s ease-in-out infinite 1.2s",
+  		marquee: 'marquee 40s linear infinite',
+  		'marquee-reverse': 'marquee-reverse 40s linear infinite',
     },
   },
   plugins: [tailwindcssAnimate],
