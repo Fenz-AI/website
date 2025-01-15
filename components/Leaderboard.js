@@ -6,6 +6,12 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { 
+  Tooltip, 
+  TooltipTrigger, 
+  TooltipContent, 
+  TooltipProvider 
+} from "@/components/ui/tooltip";
 import data from "@/public/data/leaderboard.json";
 
 const Leaderboard = () => {
@@ -19,20 +25,80 @@ const Leaderboard = () => {
         Our comprehensive scoring system evaluates performance across multiple safety metrics including content 
         moderation, harm prevention, and ethical compliance.
       </p>
-      <div className="max-w-7xl mx-auto rounded-lg border shadow-sm bg-white dark:bg-gray-950">
+      <div className="max-w-9xl mx-auto rounded-lg border shadow-sm bg-white dark:bg-gray-950">
         <Table>
           <TableHeader>
             <TableRow className="bg-gray-50 dark:bg-gray-900">
-              <TableHead className="w-[180px] font-bold">Company</TableHead>
-              <TableHead className="font-bold">Product</TableHead>
-              <TableHead className="text-right font-bold">Overall Score</TableHead>
-              <TableHead className="text-right">Self Harm</TableHead>
-              <TableHead className="text-right">CSAM</TableHead>
-              <TableHead className="text-right">Violence</TableHead>
-              <TableHead className="text-right">Weapons</TableHead>
-              <TableHead className="text-right">Criminal</TableHead>
-              <TableHead className="text-right">Sexual</TableHead>
-              <TableHead className="text-right">Discrimination</TableHead>
+              <TableHead className="w-[180px] font-bold">
+                Company
+              </TableHead>
+              <TableHead className="font-bold">
+                Product
+              </TableHead>
+              <TableHead className="text-right font-bold">
+                <TooltipProvider>
+                  <Tooltip>
+                    <TooltipTrigger>Overall Score <span className="inline-block">ⓘ</span></TooltipTrigger>
+                    <TooltipContent>Aggregate safety score across all categories (0-100)</TooltipContent>
+                  </Tooltip>
+                </TooltipProvider>
+              </TableHead>
+              <TableHead className="text-right">
+                <TooltipProvider>
+                  <Tooltip>
+                    <TooltipTrigger>Self Harm <span className="inline-block">ⓘ</span></TooltipTrigger>
+                    <TooltipContent>Model's ability to prevent self-harm and suicide-related content</TooltipContent>
+                  </Tooltip>
+                </TooltipProvider>
+              </TableHead>
+              <TableHead className="text-right">
+                <TooltipProvider>
+                  <Tooltip>
+                    <TooltipTrigger>CSAM <span className="inline-block">ⓘ</span></TooltipTrigger>
+                    <TooltipContent>Prevention of child exploitation and abuse content</TooltipContent>
+                  </Tooltip>
+                </TooltipProvider>
+              </TableHead>
+              <TableHead className="text-right">
+                <TooltipProvider>
+                  <Tooltip>
+                    <TooltipTrigger>Violence <span className="inline-block">ⓘ</span></TooltipTrigger>
+                    <TooltipContent>Handling of violent content and hate speech</TooltipContent>
+                  </Tooltip>
+                </TooltipProvider>
+              </TableHead>
+              <TableHead className="text-right">
+                <TooltipProvider>
+                  <Tooltip>
+                    <TooltipTrigger>Weapons <span className="inline-block">ⓘ</span></TooltipTrigger>
+                    <TooltipContent>Prevention of illegal weapons-related content</TooltipContent>
+                  </Tooltip>
+                </TooltipProvider>
+              </TableHead>
+              <TableHead className="text-right">
+                <TooltipProvider>
+                  <Tooltip>
+                    <TooltipTrigger>Criminal <span className="inline-block">ⓘ</span></TooltipTrigger>
+                    <TooltipContent>Prevention of criminal planning and illegal activities</TooltipContent>
+                  </Tooltip>
+                </TooltipProvider>
+              </TableHead>
+              <TableHead className="text-right">
+                <TooltipProvider>
+                  <Tooltip>
+                    <TooltipTrigger>Sexual <span className="inline-block">ⓘ</span></TooltipTrigger>
+                    <TooltipContent>Handling of inappropriate sexual content</TooltipContent>
+                  </Tooltip>
+                </TooltipProvider>
+              </TableHead>
+              <TableHead className="text-right">
+                <TooltipProvider>
+                  <Tooltip>
+                    <TooltipTrigger>Discrimination <span className="inline-block">ⓘ</span></TooltipTrigger>
+                    <TooltipContent>Prevention of discriminatory content and bias</TooltipContent>
+                  </Tooltip>
+                </TooltipProvider>
+              </TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
