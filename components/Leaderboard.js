@@ -28,14 +28,20 @@ const Leaderboard = () => {
       <div className="max-w-9xl mx-auto rounded-lg border shadow-sm bg-white dark:bg-gray-950">
         <Table>
           <TableHeader>
+            <TableRow>
+              <TableHead></TableHead>
+              <TableHead colSpan={8} className="text-center bg-blue-50 dark:bg-blue-950 font-bold">
+                Safety Scores
+              </TableHead>
+              <TableHead colSpan={4} className="text-center bg-red-50 dark:bg-red-950 font-bold">
+                Regulations
+              </TableHead>
+            </TableRow>
             <TableRow className="bg-gray-50 dark:bg-gray-900">
-              <TableHead className="w-[180px] font-bold">
-                Company
-              </TableHead>
               <TableHead className="font-bold">
-                Product
+                Model
               </TableHead>
-              <TableHead className="text-right font-bold">
+              <TableHead className="text-right font-bold bg-blue-50 dark:bg-blue-950">
                 <TooltipProvider>
                   <Tooltip>
                     <TooltipTrigger>Overall Score ⓘ</TooltipTrigger>
@@ -43,7 +49,7 @@ const Leaderboard = () => {
                   </Tooltip>
                 </TooltipProvider>
               </TableHead>
-              <TableHead className="text-right">
+              <TableHead className="text-right bg-blue-50 dark:bg-blue-950">
                 <TooltipProvider>
                   <Tooltip>
                     <TooltipTrigger>Self Harm ⓘ</TooltipTrigger>
@@ -51,7 +57,7 @@ const Leaderboard = () => {
                   </Tooltip>
                 </TooltipProvider>
               </TableHead>
-              <TableHead className="text-right">
+              <TableHead className="text-right bg-blue-50 dark:bg-blue-950">
                 <TooltipProvider>
                   <Tooltip>
                     <TooltipTrigger>CSAM ⓘ</TooltipTrigger>
@@ -59,7 +65,7 @@ const Leaderboard = () => {
                   </Tooltip>
                 </TooltipProvider>
               </TableHead>
-              <TableHead className="text-right">
+              <TableHead className="text-right bg-blue-50 dark:bg-blue-950">
                 <TooltipProvider>
                   <Tooltip>
                     <TooltipTrigger>Violence ⓘ</TooltipTrigger>
@@ -67,7 +73,7 @@ const Leaderboard = () => {
                   </Tooltip>
                 </TooltipProvider>
               </TableHead>
-              <TableHead className="text-right">
+              <TableHead className="text-right bg-blue-50 dark:bg-blue-950">
                 <TooltipProvider>
                   <Tooltip>
                     <TooltipTrigger>Weapons ⓘ</TooltipTrigger>
@@ -75,7 +81,7 @@ const Leaderboard = () => {
                   </Tooltip>
                 </TooltipProvider>
               </TableHead>
-              <TableHead className="text-right">
+              <TableHead className="text-right bg-blue-50 dark:bg-blue-950">
                 <TooltipProvider>
                   <Tooltip>
                     <TooltipTrigger>Criminal ⓘ</TooltipTrigger>
@@ -83,7 +89,7 @@ const Leaderboard = () => {
                   </Tooltip>
                 </TooltipProvider>
               </TableHead>
-              <TableHead className="text-right">
+              <TableHead className="text-right bg-blue-50 dark:bg-blue-950">
                 <TooltipProvider>
                   <Tooltip>
                     <TooltipTrigger>Sexual ⓘ</TooltipTrigger>
@@ -91,11 +97,43 @@ const Leaderboard = () => {
                   </Tooltip>
                 </TooltipProvider>
               </TableHead>
-              <TableHead className="text-right">
+              <TableHead className="text-right bg-blue-50 dark:bg-blue-950">
                 <TooltipProvider>
                   <Tooltip>
                     <TooltipTrigger>Discrimination ⓘ</TooltipTrigger>
                     <TooltipContent>Prevention of discriminatory content and bias</TooltipContent>
+                  </Tooltip>
+                </TooltipProvider>
+              </TableHead>
+              <TableHead className="text-right bg-red-50 dark:bg-red-950">
+                <TooltipProvider>
+                  <Tooltip>
+                    <TooltipTrigger>EO 14110 ⓘ</TooltipTrigger>
+                    <TooltipContent>Compliance with Executive Order 14110 on Safe, Secure, and Trustworthy AI</TooltipContent>
+                  </Tooltip>
+                </TooltipProvider>
+              </TableHead>
+              <TableHead className="text-right bg-red-50 dark:bg-red-950">
+                <TooltipProvider>
+                  <Tooltip>
+                    <TooltipTrigger>EU AI Act ⓘ</TooltipTrigger>
+                    <TooltipContent>Compliance with European Union AI Act requirements</TooltipContent>
+                  </Tooltip>
+                </TooltipProvider>
+              </TableHead>
+              <TableHead className="text-right bg-red-50 dark:bg-red-950">
+                <TooltipProvider>
+                  <Tooltip>
+                    <TooltipTrigger>CO SB 24-205 ⓘ</TooltipTrigger>
+                    <TooltipContent>Compliance with Colorado Senate Bill 24-205 on AI regulation</TooltipContent>
+                  </Tooltip>
+                </TooltipProvider>
+              </TableHead>
+              <TableHead className="text-right bg-red-50 dark:bg-red-950">
+                <TooltipProvider>
+                  <Tooltip>
+                    <TooltipTrigger>CA AI Act ⓘ</TooltipTrigger>
+                    <TooltipContent>Compliance with California AI Transparency Act</TooltipContent>
                   </Tooltip>
                 </TooltipProvider>
               </TableHead>
@@ -116,14 +154,13 @@ const Leaderboard = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      {item.company}
+                      {item.product || item.company}
                     </a>
                   </TableCell>
-                  <TableCell>{item.product}</TableCell>
                   {/* 90+ is green, 80-89 is yellow, 0-79 is red */}
                   <TableCell className={
                     `
-                      text-right font-semibold 
+                      text-right font-semibold bg-blue-50 dark:bg-blue-950
                       ${item.overall_score > 90 ? 'text-green-600 dark:text-green-400' : ''}
                       ${item.overall_score > 80 && item.overall_score < 90 ? 'text-yellow-600 dark:text-yellow-400' : ''}
                       ${item.overall_score < 80 ? 'text-red-600 dark:text-red-400' : ''}
@@ -132,47 +169,71 @@ const Leaderboard = () => {
                     {item.overall_score}
                   </TableCell>
                   <TableCell className={`
-                    text-right
+                    text-right bg-blue-50 dark:bg-blue-950
                     ${item.suicide_self_harm > 90 ? 'text-green-600 dark:text-green-400' : ''}
                     ${item.suicide_self_harm > 80 && item.suicide_self_harm < 90 ? 'text-yellow-600 dark:text-yellow-400' : ''}
                     ${item.suicide_self_harm < 80 ? 'text-red-600 dark:text-red-400' : ''}
                   `}>{item.suicide_self_harm}</TableCell>
                   <TableCell className={`
-                    text-right
+                    text-right bg-blue-50 dark:bg-blue-950
                     ${item.child_pornography > 90 ? 'text-green-600 dark:text-green-400' : ''}
                     ${item.child_pornography > 80 && item.child_pornography < 90 ? 'text-yellow-600 dark:text-yellow-400' : ''}
                     ${item.child_pornography < 80 ? 'text-red-600 dark:text-red-400' : ''}
                   `}>{item.child_pornography}</TableCell>
                   <TableCell className={`
-                    text-right
+                    text-right bg-blue-50 dark:bg-blue-950
                     ${item.violence_hate > 90 ? 'text-green-600 dark:text-green-400' : ''}
                     ${item.violence_hate > 80 && item.violence_hate < 90 ? 'text-yellow-600 dark:text-yellow-400' : ''}
                     ${item.violence_hate < 80 ? 'text-red-600 dark:text-red-400' : ''}
                   `}>{item.violence_hate}</TableCell>
                   <TableCell className={`
-                    text-right
+                    text-right bg-blue-50 dark:bg-blue-950
                     ${item.illegal_weapons > 90 ? 'text-green-600 dark:text-green-400' : ''}
                     ${item.illegal_weapons > 80 && item.illegal_weapons < 90 ? 'text-yellow-600 dark:text-yellow-400' : ''}
                     ${item.illegal_weapons < 80 ? 'text-red-600 dark:text-red-400' : ''}
                   `}>{item.illegal_weapons}</TableCell>
                   <TableCell className={`
-                    text-right
+                    text-right bg-blue-50 dark:bg-blue-950
                     ${item.criminal_planning > 90 ? 'text-green-600 dark:text-green-400' : ''}
                     ${item.criminal_planning > 80 && item.criminal_planning < 90 ? 'text-yellow-600 dark:text-yellow-400' : ''}
                     ${item.criminal_planning < 80 ? 'text-red-600 dark:text-red-400' : ''}
                   `}>{item.criminal_planning}</TableCell>
                   <TableCell className={`
-                    text-right
+                    text-right bg-blue-50 dark:bg-blue-950
                     ${item.sexual_content > 90 ? 'text-green-600 dark:text-green-400' : ''}
                     ${item.sexual_content > 80 && item.sexual_content < 90 ? 'text-yellow-600 dark:text-yellow-400' : ''}
                     ${item.sexual_content < 80 ? 'text-red-600 dark:text-red-400' : ''}
                   `}>{item.sexual_content}</TableCell>
                   <TableCell className={`
-                    text-right
+                    text-right bg-blue-50 dark:bg-blue-950
                     ${item.lgbtq_discrimination > 90 ? 'text-green-600 dark:text-green-400' : ''}
                     ${item.lgbtq_discrimination > 80 && item.lgbtq_discrimination < 90 ? 'text-yellow-600 dark:text-yellow-400' : ''}
                     ${item.lgbtq_discrimination < 80 ? 'text-red-600 dark:text-red-400' : ''}
                   `}>{item.lgbtq_discrimination}</TableCell>
+                  <TableCell className={`
+                    text-right bg-red-50 dark:bg-red-950
+                    ${item.eo_14110 > 90 ? 'text-green-600 dark:text-green-400' : ''}
+                    ${item.eo_14110 > 80 && item.eo_14110 < 90 ? 'text-yellow-600 dark:text-yellow-400' : ''}
+                    ${item.eo_14110 < 80 ? 'text-red-600 dark:text-red-400' : ''}
+                  `}>{item.eo_14110}</TableCell>
+                  <TableCell className={`
+                    text-right bg-red-50 dark:bg-red-950
+                    ${item.eu_ai_act > 90 ? 'text-green-600 dark:text-green-400' : ''}
+                    ${item.eu_ai_act > 80 && item.eu_ai_act < 90 ? 'text-yellow-600 dark:text-yellow-400' : ''}
+                    ${item.eu_ai_act < 80 ? 'text-red-600 dark:text-red-400' : ''}
+                  `}>{item.eu_ai_act}</TableCell>
+                  <TableCell className={`
+                    text-right bg-red-50 dark:bg-red-950
+                    ${item.co_sb_24_205 > 90 ? 'text-green-600 dark:text-green-400' : ''}
+                    ${item.co_sb_24_205 > 80 && item.co_sb_24_205 < 90 ? 'text-yellow-600 dark:text-yellow-400' : ''}
+                    ${item.co_sb_24_205 < 80 ? 'text-red-600 dark:text-red-400' : ''}
+                  `}>{item.co_sb_24_205}</TableCell>
+                  <TableCell className={`
+                    text-right bg-red-50 dark:bg-red-950
+                    ${item.ca_ai_act > 90 ? 'text-green-600 dark:text-green-400' : ''}
+                    ${item.ca_ai_act > 80 && item.ca_ai_act < 90 ? 'text-yellow-600 dark:text-yellow-400' : ''}
+                    ${item.ca_ai_act < 80 ? 'text-red-600 dark:text-red-400' : ''}
+                  `}>{item.ca_ai_act}</TableCell>
                 </TableRow>
               ))}
           </TableBody>
