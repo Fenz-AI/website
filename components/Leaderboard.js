@@ -38,7 +38,7 @@ const Leaderboard = () => {
               <TableHead className="text-right font-bold">
                 <TooltipProvider>
                   <Tooltip>
-                    <TooltipTrigger>Overall Score <span className="inline-block">ⓘ</span></TooltipTrigger>
+                    <TooltipTrigger>Overall Score ⓘ</TooltipTrigger>
                     <TooltipContent>Aggregate safety score across all categories (0-100)</TooltipContent>
                   </Tooltip>
                 </TooltipProvider>
@@ -46,7 +46,7 @@ const Leaderboard = () => {
               <TableHead className="text-right">
                 <TooltipProvider>
                   <Tooltip>
-                    <TooltipTrigger>Self Harm <span className="inline-block">ⓘ</span></TooltipTrigger>
+                    <TooltipTrigger>Self Harm ⓘ</TooltipTrigger>
                     <TooltipContent>Model's ability to prevent self-harm and suicide-related content</TooltipContent>
                   </Tooltip>
                 </TooltipProvider>
@@ -54,7 +54,7 @@ const Leaderboard = () => {
               <TableHead className="text-right">
                 <TooltipProvider>
                   <Tooltip>
-                    <TooltipTrigger>CSAM <span className="inline-block">ⓘ</span></TooltipTrigger>
+                    <TooltipTrigger>CSAM ⓘ</TooltipTrigger>
                     <TooltipContent>Prevention of child exploitation and abuse content</TooltipContent>
                   </Tooltip>
                 </TooltipProvider>
@@ -62,7 +62,7 @@ const Leaderboard = () => {
               <TableHead className="text-right">
                 <TooltipProvider>
                   <Tooltip>
-                    <TooltipTrigger>Violence <span className="inline-block">ⓘ</span></TooltipTrigger>
+                    <TooltipTrigger>Violence ⓘ</TooltipTrigger>
                     <TooltipContent>Handling of violent content and hate speech</TooltipContent>
                   </Tooltip>
                 </TooltipProvider>
@@ -70,7 +70,7 @@ const Leaderboard = () => {
               <TableHead className="text-right">
                 <TooltipProvider>
                   <Tooltip>
-                    <TooltipTrigger>Weapons <span className="inline-block">ⓘ</span></TooltipTrigger>
+                    <TooltipTrigger>Weapons ⓘ</TooltipTrigger>
                     <TooltipContent>Prevention of illegal weapons-related content</TooltipContent>
                   </Tooltip>
                 </TooltipProvider>
@@ -78,7 +78,7 @@ const Leaderboard = () => {
               <TableHead className="text-right">
                 <TooltipProvider>
                   <Tooltip>
-                    <TooltipTrigger>Criminal <span className="inline-block">ⓘ</span></TooltipTrigger>
+                    <TooltipTrigger>Criminal ⓘ</TooltipTrigger>
                     <TooltipContent>Prevention of criminal planning and illegal activities</TooltipContent>
                   </Tooltip>
                 </TooltipProvider>
@@ -86,7 +86,7 @@ const Leaderboard = () => {
               <TableHead className="text-right">
                 <TooltipProvider>
                   <Tooltip>
-                    <TooltipTrigger>Sexual <span className="inline-block">ⓘ</span></TooltipTrigger>
+                    <TooltipTrigger>Sexual ⓘ</TooltipTrigger>
                     <TooltipContent>Handling of inappropriate sexual content</TooltipContent>
                   </Tooltip>
                 </TooltipProvider>
@@ -94,7 +94,7 @@ const Leaderboard = () => {
               <TableHead className="text-right">
                 <TooltipProvider>
                   <Tooltip>
-                    <TooltipTrigger>Discrimination <span className="inline-block">ⓘ</span></TooltipTrigger>
+                    <TooltipTrigger>Discrimination ⓘ</TooltipTrigger>
                     <TooltipContent>Prevention of discriminatory content and bias</TooltipContent>
                   </Tooltip>
                 </TooltipProvider>
@@ -131,13 +131,48 @@ const Leaderboard = () => {
                   }>
                     {item.overall_score}
                   </TableCell>
-                  <TableCell className={`text-right ${item.suicide_self_harm > 0 ? 'text-red-600 dark:text-red-400' : 'text-green-600 dark:text-green-400'}`}>{item.suicide_self_harm}</TableCell>
-                  <TableCell className={`text-right ${item.child_pornography > 0 ? 'text-red-600 dark:text-red-400' : 'text-green-600 dark:text-green-400'}`}>{item.child_pornography}</TableCell>
-                  <TableCell className={`text-right ${item.violence_hate > 0 ? 'text-red-600 dark:text-red-400' : 'text-green-600 dark:text-green-400'}`}>{item.violence_hate}</TableCell>
-                  <TableCell className={`text-right ${item.illegal_weapons > 0 ? 'text-red-600 dark:text-red-400' : 'text-green-600 dark:text-green-400'}`}>{item.illegal_weapons}</TableCell>
-                  <TableCell className={`text-right ${item.criminal_planning > 0 ? 'text-red-600 dark:text-red-400' : 'text-green-600 dark:text-green-400'}`}>{item.criminal_planning}</TableCell>
-                  <TableCell className={`text-right ${item.sexual_content > 0 ? 'text-red-600 dark:text-red-400' : 'text-green-600 dark:text-green-400'}`}>{item.sexual_content}</TableCell>
-                  <TableCell className={`text-right ${item.lgbtq_discrimination > 0 ? 'text-red-600 dark:text-red-400' : 'text-green-600 dark:text-green-400'}`}>{item.lgbtq_discrimination}</TableCell>
+                  <TableCell className={`
+                    text-right
+                    ${item.suicide_self_harm > 90 ? 'text-green-600 dark:text-green-400' : ''}
+                    ${item.suicide_self_harm > 80 && item.suicide_self_harm < 90 ? 'text-yellow-600 dark:text-yellow-400' : ''}
+                    ${item.suicide_self_harm < 80 ? 'text-red-600 dark:text-red-400' : ''}
+                  `}>{item.suicide_self_harm}</TableCell>
+                  <TableCell className={`
+                    text-right
+                    ${item.child_pornography > 90 ? 'text-green-600 dark:text-green-400' : ''}
+                    ${item.child_pornography > 80 && item.child_pornography < 90 ? 'text-yellow-600 dark:text-yellow-400' : ''}
+                    ${item.child_pornography < 80 ? 'text-red-600 dark:text-red-400' : ''}
+                  `}>{item.child_pornography}</TableCell>
+                  <TableCell className={`
+                    text-right
+                    ${item.violence_hate > 90 ? 'text-green-600 dark:text-green-400' : ''}
+                    ${item.violence_hate > 80 && item.violence_hate < 90 ? 'text-yellow-600 dark:text-yellow-400' : ''}
+                    ${item.violence_hate < 80 ? 'text-red-600 dark:text-red-400' : ''}
+                  `}>{item.violence_hate}</TableCell>
+                  <TableCell className={`
+                    text-right
+                    ${item.illegal_weapons > 90 ? 'text-green-600 dark:text-green-400' : ''}
+                    ${item.illegal_weapons > 80 && item.illegal_weapons < 90 ? 'text-yellow-600 dark:text-yellow-400' : ''}
+                    ${item.illegal_weapons < 80 ? 'text-red-600 dark:text-red-400' : ''}
+                  `}>{item.illegal_weapons}</TableCell>
+                  <TableCell className={`
+                    text-right
+                    ${item.criminal_planning > 90 ? 'text-green-600 dark:text-green-400' : ''}
+                    ${item.criminal_planning > 80 && item.criminal_planning < 90 ? 'text-yellow-600 dark:text-yellow-400' : ''}
+                    ${item.criminal_planning < 80 ? 'text-red-600 dark:text-red-400' : ''}
+                  `}>{item.criminal_planning}</TableCell>
+                  <TableCell className={`
+                    text-right
+                    ${item.sexual_content > 90 ? 'text-green-600 dark:text-green-400' : ''}
+                    ${item.sexual_content > 80 && item.sexual_content < 90 ? 'text-yellow-600 dark:text-yellow-400' : ''}
+                    ${item.sexual_content < 80 ? 'text-red-600 dark:text-red-400' : ''}
+                  `}>{item.sexual_content}</TableCell>
+                  <TableCell className={`
+                    text-right
+                    ${item.lgbtq_discrimination > 90 ? 'text-green-600 dark:text-green-400' : ''}
+                    ${item.lgbtq_discrimination > 80 && item.lgbtq_discrimination < 90 ? 'text-yellow-600 dark:text-yellow-400' : ''}
+                    ${item.lgbtq_discrimination < 80 ? 'text-red-600 dark:text-red-400' : ''}
+                  `}>{item.lgbtq_discrimination}</TableCell>
                 </TableRow>
               ))}
           </TableBody>
