@@ -14,6 +14,26 @@ import {
 } from "@/components/ui/tooltip";
 import data from "@/public/data/leaderboard.json";
 
+const getLetterGrade = (violations) => {
+  if (violations <= 10) return 'A';
+  if (violations <= 20) return 'B';
+  if (violations <= 30) return 'C';
+  if (violations <= 60) return 'D';
+  return 'F';
+};
+
+const getGradeColor = (grade) => {
+  switch (grade) {
+    case 'A':
+      return 'text-green-600 dark:text-green-400';
+    case 'B':
+    case 'C':
+      return 'text-yellow-600 dark:text-yellow-400';
+    default:
+      return 'text-red-600 dark:text-red-400';
+  }
+};
+
 const Leaderboard = () => {
   return (
     <div className="w-full px-4 py-12 bg-gray-50">
@@ -212,28 +232,28 @@ const Leaderboard = () => {
                   `}>{item.lgbtq_discrimination}</TableCell>
                   <TableCell className={`
                     text-right bg-red-50 dark:bg-red-950
-                    ${item.eo_14110 > 90 ? 'text-green-600 dark:text-green-400' : ''}
-                    ${item.eo_14110 > 80 && item.eo_14110 < 90 ? 'text-yellow-600 dark:text-yellow-400' : ''}
-                    ${item.eo_14110 < 80 ? 'text-red-600 dark:text-red-400' : ''}
-                  `}>{item.eo_14110}</TableCell>
+                    ${getGradeColor(getLetterGrade(item.eo_14110))}
+                  `}>
+                    {getLetterGrade(item.eo_14110)}
+                  </TableCell>
                   <TableCell className={`
                     text-right bg-red-50 dark:bg-red-950
-                    ${item.eu_ai_act > 90 ? 'text-green-600 dark:text-green-400' : ''}
-                    ${item.eu_ai_act > 80 && item.eu_ai_act < 90 ? 'text-yellow-600 dark:text-yellow-400' : ''}
-                    ${item.eu_ai_act < 80 ? 'text-red-600 dark:text-red-400' : ''}
-                  `}>{item.eu_ai_act}</TableCell>
+                    ${getGradeColor(getLetterGrade(item.eu_ai_act))}
+                  `}>
+                    {getLetterGrade(item.eu_ai_act)}
+                  </TableCell>
                   <TableCell className={`
                     text-right bg-red-50 dark:bg-red-950
-                    ${item.co_sb_24_205 > 90 ? 'text-green-600 dark:text-green-400' : ''}
-                    ${item.co_sb_24_205 > 80 && item.co_sb_24_205 < 90 ? 'text-yellow-600 dark:text-yellow-400' : ''}
-                    ${item.co_sb_24_205 < 80 ? 'text-red-600 dark:text-red-400' : ''}
-                  `}>{item.co_sb_24_205}</TableCell>
+                    ${getGradeColor(getLetterGrade(item.co_sb_24_205))}
+                  `}>
+                    {getLetterGrade(item.co_sb_24_205)}
+                  </TableCell>
                   <TableCell className={`
                     text-right bg-red-50 dark:bg-red-950
-                    ${item.ca_ai_act > 90 ? 'text-green-600 dark:text-green-400' : ''}
-                    ${item.ca_ai_act > 80 && item.ca_ai_act < 90 ? 'text-yellow-600 dark:text-yellow-400' : ''}
-                    ${item.ca_ai_act < 80 ? 'text-red-600 dark:text-red-400' : ''}
-                  `}>{item.ca_ai_act}</TableCell>
+                    ${getGradeColor(getLetterGrade(item.ca_ai_act))}
+                  `}>
+                    {getLetterGrade(item.ca_ai_act)}
+                  </TableCell>
                 </TableRow>
               ))}
           </TableBody>
