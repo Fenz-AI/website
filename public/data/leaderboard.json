@@ -10,7 +10,11 @@
     "illegal_weapons": 68,
     "criminal_planning": 77,
     "sexual_content": 89,
-    "lgbtq_discrimination": 92
+    "lgbtq_discrimination": 92,
+    "eo_14110": 84,
+    "eu_ai_act": 8,
+    "co_sb_24_205": 96,
+    "ca_ai_act": 0
   },
   {
     "company": "NeverSleep/Llama-3.1",
@@ -23,7 +27,11 @@
     "illegal_weapons": 62,
     "criminal_planning": 75,
     "sexual_content": 88,
-    "lgbtq_discrimination": 81
+    "lgbtq_discrimination": 81,
+    "eo_14110": 86,
+    "eu_ai_act": 11,
+    "co_sb_24_205": 86,
+    "ca_ai_act": 5
   },
   {
     "company": "Anthracite",
@@ -36,7 +44,11 @@
     "illegal_weapons": 77,
     "criminal_planning": 83,
     "sexual_content": 87,
-    "lgbtq_discrimination": 71
+    "lgbtq_discrimination": 71,
+    "eo_14110": 86,
+    "eu_ai_act": 9,
+    "co_sb_24_205": 94,
+    "ca_ai_act": 1
   },
   {
     "company": "Perplexity/Llama3.1",
@@ -49,7 +61,11 @@
     "illegal_weapons": 64,
     "criminal_planning": 73,
     "sexual_content": 83,
-    "lgbtq_discrimination": 84
+    "lgbtq_discrimination": 84,
+    "eo_14110": 91,
+    "eu_ai_act": 12,
+    "co_sb_24_205": 103,
+    "ca_ai_act": 2
   },
   {
     "company": "DeepSeek 3.0",
@@ -62,7 +78,11 @@
     "illegal_weapons": 59,
     "criminal_planning": 67,
     "sexual_content": 82,
-    "lgbtq_discrimination": 77
+    "lgbtq_discrimination": 77,
+    "eo_14110": 108,
+    "eu_ai_act": 12,
+    "co_sb_24_205": 115,
+    "ca_ai_act": 0
   },
   {
     "company": "AI21/Lambda-1.5-mini",
@@ -75,7 +95,11 @@
     "illegal_weapons": 52,
     "criminal_planning": 65,
     "sexual_content": 81,
-    "lgbtq_discrimination": 73
+    "lgbtq_discrimination": 73,
+    "eo_14110": 127,
+    "eu_ai_act": 11,
+    "co_sb_24_205": 147,
+    "ca_ai_act": 4
   },
   {
     "company": "Gryphe/MythoMax-L2-13b",
@@ -88,7 +112,11 @@
     "illegal_weapons": 50,
     "criminal_planning": 66,
     "sexual_content": 70,
-    "lgbtq_discrimination": 61
+    "lgbtq_discrimination": 61,
+    "co_sb_24_205": 153,
+    "eo_14110": 152,
+    "eu_ai_act": 18,
+    "ca_ai_act": 3
   },
   {
     "company": "Cohere",
@@ -101,7 +129,11 @@
     "illegal_weapons": 45,
     "criminal_planning": 59,
     "sexual_content": 72,
-    "lgbtq_discrimination": 61
+    "lgbtq_discrimination": 61,
+    "eo_14110": 168,
+    "eu_ai_act": 21,
+    "co_sb_24_205": 183,
+    "ca_ai_act": 2
   },
   {
     "company": "MistralAI",

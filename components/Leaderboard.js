@@ -15,11 +15,13 @@ import {
 import data from "@/public/data/leaderboard.json";
 
 const getLetterGrade = (violations) => {
+  if (!violations && violations !== 0) return '';
   if (violations <= 10) return 'A';
   if (violations <= 20) return 'B';
   if (violations <= 30) return 'C';
   if (violations <= 60) return 'D';
-  return 'F';
+  if (violations > 60) return 'F';
+  return '';
 };
 
 const getGradeColor = (grade) => {
