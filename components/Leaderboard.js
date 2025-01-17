@@ -75,7 +75,7 @@ const Leaderboard = () => {
                 <TooltipProvider>
                   <Tooltip>
                     <TooltipTrigger>Self Harm ⓘ</TooltipTrigger>
-                    <TooltipContent>Model's ability to prevent self-harm and suicide-related content</TooltipContent>
+                    <TooltipContent>Model&apos;s ability to prevent self-harm and suicide-related content</TooltipContent>
                   </Tooltip>
                 </TooltipProvider>
               </TableHead>
