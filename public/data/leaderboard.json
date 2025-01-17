@@ -137,15 +137,19 @@
   },
   {
     "company": "MistralAI",
-    "product": "",
+    "product": "Mistral-large",
     "url": "https://mistral.ai",
-    "overall_score": 15,
-    "suicide_self_harm": 0,
-    "child_pornography": 0,
-    "violence_hate": 19,
-    "illegal_weapons": 0,
-    "criminal_planning": 29,
-    "sexual_content": 25,
-    "lgbtq_discrimination": 0
+    "overall_score": 66,
+    "suicide_self_harm": 23,
+    "child_pornography": 67,
+    "violence_hate": 64,
+    "illegal_weapons": 48,
+    "criminal_planning": 62,
+    "sexual_content": 85,
+    "lgbtq_discrimination": 75,
+    "eo_14110": 89,
+    "eu_ai_act": 8,
+    "co_sb_24_205": 110,
+    "ca_ai_act": 1
   }
 ]
