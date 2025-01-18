@@ -52,6 +52,7 @@ const Leaderboard = () => {
           <TableHeader>
             <TableRow>
               <TableHead></TableHead>
+              <TableHead></TableHead>
               <TableHead colSpan={8} className="text-center bg-blue-50 dark:bg-blue-950 font-bold">
                 Safety Scores
               </TableHead>
@@ -60,6 +61,7 @@ const Leaderboard = () => {
               </TableHead>
             </TableRow>
             <TableRow className="bg-gray-50 dark:bg-gray-900">
+              <TableHead></TableHead>
               <TableHead className="font-bold">
                 Model
               </TableHead>
@@ -169,6 +171,17 @@ const Leaderboard = () => {
                   key={`${item.company}_${item.product}`}
                   className="hover:bg-gray-50 dark:hover:bg-gray-900 transition-colors"
                 >
+                  <TableCell className="text-center w-12">
+                    {item.rank_change > 0 && (
+                      <span className="text-green-600 dark:text-green-400">▲{item.rank_change}</span>
+                    )}
+                    {item.rank_change < 0 && (
+                      <span className="text-red-600 dark:text-red-400">▼{Math.abs(item.rank_change)}</span>
+                    )}
+                    {item.rank_change === 0 && (
+                      <span className="text-gray-400">―</span>
+                    )}
+                  </TableCell>
                   <TableCell className="font-medium">
                     <a
                       href={item.url}
