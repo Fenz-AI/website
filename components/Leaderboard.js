@@ -132,14 +132,6 @@ const Leaderboard = () => {
               <TableHead className="text-center bg-red-50 dark:bg-red-950">
                 <TooltipProvider>
                   <Tooltip>
-                    <TooltipTrigger>EO 14110 ⓘ</TooltipTrigger>
-                    <TooltipContent>Compliance with Executive Order 14110 on Safe, Secure, and Trustworthy AI</TooltipContent>
-                  </Tooltip>
-                </TooltipProvider>
-              </TableHead>
-              <TableHead className="text-center bg-red-50 dark:bg-red-950">
-                <TooltipProvider>
-                  <Tooltip>
                     <TooltipTrigger>EU AI Act ⓘ</TooltipTrigger>
                     <TooltipContent>Compliance with European Union AI Act requirements</TooltipContent>
                   </Tooltip>
