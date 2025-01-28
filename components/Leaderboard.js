@@ -53,15 +53,20 @@ const Leaderboard = () => {
             <TableRow>
               <TableHead></TableHead>
               <TableHead></TableHead>
+              <TableHead></TableHead>
               <TableHead colSpan={8} className="text-center bg-blue-50 dark:bg-blue-950 font-bold">
                 Safety Scores
               </TableHead>
               <TableHead colSpan={3} className="text-center bg-red-50 dark:bg-red-950 font-bold">
                 Regulations
               </TableHead>
+              <TableHead></TableHead>
             </TableRow>
             <TableRow className="bg-gray-50 dark:bg-gray-900">
               <TableHead></TableHead>
+              <TableHead className="font-bold">
+                Company
+              </TableHead>
               <TableHead className="font-bold">
                 Model
               </TableHead>
@@ -153,6 +158,14 @@ const Leaderboard = () => {
                   </Tooltip>
                 </TooltipProvider>
               </TableHead>
+              <TableHead className="text-center font-bold">
+                <TooltipProvider>
+                  <Tooltip>
+                    <TooltipTrigger>License ⓘ</TooltipTrigger>
+                    <TooltipContent>Model license type</TooltipContent>
+                  </Tooltip>
+                </TooltipProvider>
+              </TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
@@ -175,13 +188,16 @@ const Leaderboard = () => {
                     )}
                   </TableCell>
                   <TableCell className="font-medium">
+                    {item.company}
+                  </TableCell>
+                  <TableCell className="font-medium">
                     <a
                       href={item.url}
                       className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 hover:underline transition-colors"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      {item.product || item.company}
+                      {item.product}
                     </a>
                   </TableCell>
                   {/* 90+ is green, 80-89 is yellow, 0-79 is red */}
@@ -254,6 +270,9 @@ const Leaderboard = () => {
                     ${getGradeColor(getLetterGrade(item.ca_ai_act))}
                   `}>
                     {getLetterGrade(item.ca_ai_act)}
+                  </TableCell>
+                  <TableCell className="text-center">
+                    {item.license || "—"}
                   </TableCell>
                 </TableRow>
               ))}
