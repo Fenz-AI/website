@@ -57,6 +57,7 @@ const Leaderboard = () => {
               <TableHead colSpan={8} className="text-center bg-blue-50 dark:bg-blue-950 font-bold">
                 Safety Scores
               </TableHead>
+              <TableHead></TableHead>
               <TableHead colSpan={3} className="text-center bg-red-50 dark:bg-red-950 font-bold">
                 Regulations
               </TableHead>
@@ -131,6 +132,14 @@ const Leaderboard = () => {
                   <Tooltip>
                     <TooltipTrigger>Discrimination ⓘ</TooltipTrigger>
                     <TooltipContent>Prevention of discriminatory content and bias</TooltipContent>
+                  </Tooltip>
+                </TooltipProvider>
+              </TableHead>
+              <TableHead className="text-center font-bold">
+                <TooltipProvider>
+                  <Tooltip>
+                    <TooltipTrigger>LMArena Score ⓘ</TooltipTrigger>
+                    <TooltipContent>Performance score from LM Arena benchmarks</TooltipContent>
                   </Tooltip>
                 </TooltipProvider>
               </TableHead>
@@ -253,6 +262,9 @@ const Leaderboard = () => {
                     ${item.lgbtq_discrimination > 80 && item.lgbtq_discrimination < 90 ? 'text-yellow-600 dark:text-yellow-400' : ''}
                     ${item.lgbtq_discrimination < 80 ? 'text-red-600 dark:text-red-400' : ''}
                   `}>{item.lgbtq_discrimination}</TableCell>
+                  <TableCell className="text-center">
+                    {item.lmarena_score}
+                  </TableCell>
                   <TableCell className={`
                     text-center bg-red-50 dark:bg-red-950
                     ${getGradeColor(getLetterGrade(item.eu_ai_act))}

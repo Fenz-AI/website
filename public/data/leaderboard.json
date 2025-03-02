@@ -1,7 +1,7 @@
 [
   {
     "company": "Anthropic",
-    "product": "Claude 3.5 Sonnet", 
+    "product": "Claude 3.5 Sonnet (20241022)", 
     "url": "https://www.anthropic.com/claude/sonnet",
     "overall_score": 95,
     "suicide_self_harm": 100,
@@ -11,6 +11,7 @@
     "criminal_planning": 96,
     "sexual_content": 98,
     "lgbtq_discrimination": 97,
+    "lmarena_score": 1283,
     "eu_ai_act": 0,
     "co_sb_24_205": 11,
     "ca_ai_act": 0,
@@ -18,7 +19,7 @@
   },
   {
     "company": "DeepSeek",
-    "product": "Deepseek V3",
+    "product": "Deepseek-V3",
     "url": "https://huggingface.co/deepseek-ai/DeepSeek-V3",
     "overall_score": 44,
     "suicide_self_harm": 18,
@@ -31,11 +32,12 @@
     "eu_ai_act": 11,
     "co_sb_24_205": 170,
     "ca_ai_act": 1,
-    "license": "DeepSeek"
+    "license": "DeepSeek",
+    "lmarena_score": 1318
   },
   {
     "company": "DeepSeek",
-    "product": "Deepseek R1",
+    "product": "Deepseek-R1",
     "url": "https://huggingface.co/deepseek-ai/DeepSeek-R1",
     "overall_score": 36,
     "suicide_self_harm": 5,
@@ -48,11 +50,12 @@
     "eu_ai_act": 6,
     "co_sb_24_205": 174,
     "ca_ai_act": 4,
-    "license": "DeepSeek"
+    "license": "DeepSeek",
+    "lmarena_score": 1363
   },
   {
     "company": "OpenAI",
-    "product": "GPT-4o",
+    "product": "GPT-4o-2024-08-06",
     "url": "https://openai.com/index/hello-gpt-4o/",
     "overall_score": 67,
     "suicide_self_harm": 41,
@@ -65,11 +68,12 @@
     "eu_ai_act": 4,
     "co_sb_24_205": 66,
     "ca_ai_act": 2,
-    "license": "Proprietary"
+    "license": "Proprietary",
+    "lmarena_score": 1377
   },
   {
     "company": "OpenAI",
-    "product": "GPT-4o-mini",
+    "product": "GPT-4o-mini-2024-07-18",
     "url": "https://openai.com/index/gpt-4o-mini-advancing-cost-efficient-intelligence/",
     "overall_score": 59,
     "suicide_self_harm": 23,
@@ -82,11 +86,12 @@
     "eu_ai_act": 7,
     "co_sb_24_205": 107,
     "ca_ai_act": 2,
-    "license": "Proprietary"
+    "license": "Proprietary",
+    "lmarena_score": 1272
   },
   {
     "company": "Meta",
-    "product": "LLama 3.2",
+    "product": "LLama 3.2-3B",
     "url": "https://huggingface.co/meta-llama/Llama-3.2-3B",
     "overall_score": 72,
     "suicide_self_harm": 50,
@@ -99,11 +104,12 @@
     "eu_ai_act": 3,
     "co_sb_24_205": 78,
     "ca_ai_act": 0,
-    "license": "Llama 3.2 Community"
+    "license": "Llama 3.2 Community",
+    "lmarena_score": 1103
   },
   {
     "company": "Mistral",
-    "product": "Mistral Large",
+    "product": "Mistral-Large-2407",
     "url": "https://huggingface.co/mistralai/Mistral-Large-Instruct-2407",
     "overall_score": 39,
     "suicide_self_harm": 9,
@@ -116,6 +122,7 @@
     "co_sb_24_205": 210,
     "eu_ai_act": 6,
     "ca_ai_act": 3,
-    "license": "Mistral AI Research"
+    "license": "Mistral AI Research",
+    "lmarena_score": 1251
   }
 ]
