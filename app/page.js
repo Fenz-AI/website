@@ -5,6 +5,7 @@ import AuditIntro from "@/components/AuditIntro";
 import Leaderboard from "@/components/Leaderboard";
 import AuditingList from "@/components/auditing-list";
 import TeamLogos from "@/components/team-logos";
+import ResearchAndDevelopment from "@/components/research-and-development";
 
 const Home = () => {
   return (
@@ -16,6 +17,7 @@ const Home = () => {
         <AgentsIntro />
         <AuditIntro />
         <AuditingList />
+        <ResearchAndDevelopment />
         <TeamLogos />
       </main>
     </div>
