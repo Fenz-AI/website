@@ -17,6 +17,7 @@ export default function RootLayout({ children }) {
           src="https://tally.so/widgets/embed.js"
           crossOrigin="anonymous"
         />
+        {/*
         <Script strategy="lazyOnload" id="tally-config">
           {`
           window.TallyConfig = {
@@ -32,6 +33,7 @@ export default function RootLayout({ children }) {
           };
           `}
         </Script>
+        */}
       </head>
       <body
         className="w-full antialiased bg-gray-100 text-gray-900 flex flex-col min-h-screen items-center"
