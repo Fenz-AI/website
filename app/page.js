@@ -1,4 +1,5 @@
 import Banner from "@/components/banner";
+import DemoVideo from "@/components/demo-video";
 import Features from "@/components/features";
 import AgentsIntro from "@/components/AgentsIntro";
 import AuditIntro from "@/components/AuditIntro";
@@ -12,6 +13,7 @@ const Home = () => {
     <div className="flex flex-col min-h-screen">
       <main className="flex-grow">
         <Banner />
+        <DemoVideo />
         <Features />
         <Leaderboard />
         <AgentsIntro />
