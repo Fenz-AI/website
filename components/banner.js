@@ -26,15 +26,26 @@ const Banner = () => {
             <span className="font-bold text-red-400 animate-scale-red">AUTHENTICATION</span>
           </span>
         </p>
-        <Link href="#tally-open=nrLkBv&tally-layout=modal&tally-emoji-text=👋&tally-emoji-animation=wave">
-        <Button 
-          size="lg" 
-          variant="custom" 
-          className="bg-gradient-to-r from-blue-500 to-purple-600 text-white hover:from-blue-600 hover:to-purple-700 transition-all duration-300 text-lg px-8 py-3 rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-        >
-          Get Your Free Audit Report
-        </Button>
-        </Link>
+        <div className="flex space-x-6">
+          <Link href="#tally-open=nrLkBv&tally-layout=modal&tally-emoji-text=👋&tally-emoji-animation=wave">
+            <Button 
+              size="lg" 
+              variant="custom" 
+              className="bg-blue-600 text-white text-lg font-medium px-8 py-4 rounded-full shadow-md hover:bg-blue-700 transition-all duration-300 hover:shadow-lg"
+            >
+              Get Sample Report
+            </Button>
+          </Link>
+          <Link href="https://demo.fenz.ai" target="_blank">
+            <Button 
+              size="lg" 
+              variant="custom" 
+              className="bg-black text-white text-lg font-medium px-8 py-4 rounded-full shadow-md hover:bg-gray-800 transition-all duration-300 hover:shadow-lg"
+            >
+              Demo
+            </Button>
+          </Link>
+        </div>
       </div>
     </div>
   );
